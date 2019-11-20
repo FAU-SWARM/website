@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script src="http://www.d3plus.org/js/d3.js"></script>
+    <script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+    <div id="viz"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script>
+
+        $(window).on("load", function () {
+            // var i = 0;
+            // setInterval(() => {
+            //     console.log(`iteration ${i}`);
+            //     i += 1;
+            $.get('http://localhost:6969/api/v0/raw_data', function (response) {
+                // $(".result").html(data);
+                let sample_data = [];
+                for (const element of response['data']) {
+                    let date = element['raw']['Date'];
+                    delete element['raw']['Date'];
+                    for (const key in element['raw']) {
+                        if (element['raw'].hasOwnProperty(key)) {
+                            const datatype = key;
+                            const datavalue = element['raw'][key];
+
+                            sample_data.push({
+                                "date": date,
+                                "type": datatype,
+                                "value": datavalue,
+                            });
+                        }
+                    }
+                    sample_data.push(element['raw'])
+                }
+
+                // instantiate d3plus
+                var visualization = d3plus.viz()
+                    .container("#viz")  // container DIV to hold the visualization
+                    .data(sample_data)  // data to use with the visualization
+                    .type("line")       // visualization type
+                    .id("type")         // key for which our data is unique on
+                    .text("type")       // key to use for display text
+                    .y("value")         // key to use for y-axis
+                    .x("date")          // key to use for x-axis
+                    .draw()
+            });
+            // }, 2000);
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>
