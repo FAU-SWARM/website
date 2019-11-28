@@ -6,7 +6,7 @@ import { TestComponent } from 'src/app/components/test/test.component';
 
 const routes: Routes = [
   {
-    component: TestComponent, path: '',
+    component: HomeComponent, path: '',
     data: { breadcrumb: 'Home', description: 'Welcome home. :)' },
   },
   {
