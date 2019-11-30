@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
 import { ApiService } from './services/api.service';
 import { HomeComponent } from './components/home/home.component';
+import { RawDataComponent } from './components/raw-data/raw-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     HomeComponent,
+    RawDataComponent,
   ],
   imports: [
     BrowserModule,

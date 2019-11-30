@@ -1,0 +1,35 @@
+// element offsetWidth is 0
+// https://stackoverflow.com/questions/56667347/angulars-nativeelements-offsetwidth-is-0
+
+
+// scss isn't working
+// https://stackoverflow.com/questions/36475168/angular-2-0-d3-js-dont-apply-css-on-svg
+// https://stackoverflow.com/questions/36214546/styles-in-component-for-d3-js-do-not-show-in-angular-2/36214723#36214723
+
+:host {
+  display: block; /* or display: inline-block; */
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 5px;
+}
+
+// .line-b {
+//   fill: none;
+//   stroke: steelblue;
+//   stroke-width: 5px;
+// }
+
+// .line-g {
+//   fill: none;
+//   stroke: green;
+//   stroke-width: 5px;
+// }
+
+// .line-r {
+//   fill: none;
+//   stroke: red;
+//   stroke-width: 5px;
+// }

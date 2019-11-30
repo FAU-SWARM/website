@@ -12,8 +12,7 @@
 </head>
 
 <body>
-    <script src="http://www.d3plus.org/js/d3.js"></script>
-    <script src="http://www.d3plus.org/js/d3plus.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
 
     <div id="viz"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
@@ -23,7 +22,8 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <script>
-
+        console.log(d3.scaleLinear().range([0, 80]))
+        console.log(typeof d3.scaleLinear().range([0, 80]))
         $(window).on("load", function () {
             // var i = 0;
             // setInterval(() => {

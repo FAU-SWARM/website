@@ -1,21 +1,17 @@
-<div class="content" role="main">
-
-    <div class="card-container">
-        <p>{{this.keys.length}}</p>
-        <p>{{this.data.length}}</p>
+<div class="container">
+    <div class="col">
+        <app-raw-data [data]="data" [functions]="functions"></app-raw-data>
     </div>
-
-
+</div>
+<div class="content" role="main">
     <div class="card-container" *ngIf="this.keys.length > 0">
-        <table style="width:100%">
+        <table style="width:100%" *ngIf="this.data">
             <tr>
                 <th *ngFor="let key of this.keys">{{key}}</th>
             </tr>
             <tr *ngFor="let datum of this.data">
-                <td *ngFor="let key of this.keys">{{datum[key]}}</td>
+                <td *ngFor="let key of this.keys">{{datum['raw'][key]}}</td>
             </tr>
         </table>
     </div>
-
-
 </div>
