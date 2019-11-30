@@ -1,0 +1,1364 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
+        /***/ "./$$_lazy_route_resource lazy recursive": 
+        /*!******************************************************!*\
+          !*** ./$$_lazy_route_resource lazy namespace object ***!
+          \******************************************************/
+        /*! no static exports found */
+        /***/ (function (module, exports) {
+            function webpackEmptyAsyncContext(req) {
+                // Here Promise.resolve().then() is used instead of new Promise() to prevent
+                // uncaught exception popping up in devtools
+                return Promise.resolve().then(function () {
+                    var e = new Error("Cannot find module '" + req + "'");
+                    e.code = 'MODULE_NOT_FOUND';
+                    throw e;
+                });
+            }
+            webpackEmptyAsyncContext.keys = function () { return []; };
+            webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+            module.exports = webpackEmptyAsyncContext;
+            webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html": 
+        /*!**************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
+          \**************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<router-outlet></router-outlet>\r\n");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/home/home.component.html": 
+        /*!*******************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/home/home.component.html ***!
+          \*******************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->\r\n<!-- * * * * * * * to get started with your project! * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n\r\n<style>\r\n    :host {\r\n        font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\r\n        font-size: 14px;\r\n        color: #333;\r\n        box-sizing: border-box;\r\n        -webkit-font-smoothing: antialiased;\r\n        -moz-osx-font-smoothing: grayscale;\r\n    }\r\n\r\n    h1,\r\n    h2,\r\n    h3,\r\n    h4,\r\n    h5,\r\n    h6 {\r\n        margin: 8px 0;\r\n    }\r\n\r\n    p {\r\n        margin: 0;\r\n    }\r\n\r\n    .spacer {\r\n        flex: 1;\r\n    }\r\n\r\n    .toolbar {\r\n        height: 60px;\r\n        margin: -8px;\r\n        display: flex;\r\n        align-items: center;\r\n        background-color: #1976d2;\r\n        color: white;\r\n        font-weight: 600;\r\n    }\r\n\r\n    .toolbar img {\r\n        margin: 0 16px;\r\n    }\r\n\r\n    .toolbar #twitter-logo {\r\n        height: 40px;\r\n        margin: 0 16px;\r\n    }\r\n\r\n    .toolbar #twitter-logo:hover {\r\n        opacity: 0.8;\r\n    }\r\n\r\n    .content {\r\n        display: flex;\r\n        margin: 32px auto;\r\n        padding: 0 16px;\r\n        max-width: 960px;\r\n        flex-direction: column;\r\n        align-items: center;\r\n    }\r\n\r\n    svg.material-icons {\r\n        height: 24px;\r\n        width: auto;\r\n    }\r\n\r\n    svg.material-icons:not(:last-child) {\r\n        margin-right: 8px;\r\n    }\r\n\r\n    .card svg.material-icons path {\r\n        fill: #888;\r\n    }\r\n\r\n    .card-container {\r\n        display: flex;\r\n        flex-wrap: wrap;\r\n        justify-content: center;\r\n        margin-top: 16px;\r\n    }\r\n\r\n    .card {\r\n        border-radius: 4px;\r\n        border: 1px solid #eee;\r\n        background-color: #fafafa;\r\n        height: 40px;\r\n        width: 200px;\r\n        margin: 0 8px 16px;\r\n        padding: 16px;\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: center;\r\n        align-items: center;\r\n        transition: all 0.2s ease-in-out;\r\n        line-height: 24px;\r\n    }\r\n\r\n    .card-container .card:not(:last-child) {\r\n        margin-right: 0;\r\n    }\r\n\r\n    .card.card-small {\r\n        height: 16px;\r\n        width: 168px;\r\n    }\r\n\r\n    .card-container .card:not(.highlight-card) {\r\n        cursor: pointer;\r\n    }\r\n\r\n    .card-container .card:not(.highlight-card):hover {\r\n        transform: translateY(-3px);\r\n        box-shadow: 0 4px 17px rgba(black, 0.35);\r\n    }\r\n\r\n    .card-container .card:not(.highlight-card):hover .material-icons path {\r\n        fill: rgb(105, 103, 103);\r\n    }\r\n\r\n    .card.highlight-card {\r\n        background-color: #1976d2;\r\n        color: white;\r\n        font-weight: 600;\r\n        border: none;\r\n        width: auto;\r\n        min-width: 30%;\r\n        position: relative;\r\n    }\r\n\r\n    .card.card.highlight-card span {\r\n        margin-left: 60px;\r\n    }\r\n\r\n    svg#rocket {\r\n        width: 80px;\r\n        position: absolute;\r\n        left: -10px;\r\n        top: -24px;\r\n    }\r\n\r\n    svg#rocket-smoke {\r\n        height: 100vh;\r\n        position: absolute;\r\n        top: 10px;\r\n        right: 180px;\r\n        z-index: -10;\r\n    }\r\n\r\n    a,\r\n    a:visited,\r\n    a:hover {\r\n        color: #1976d2;\r\n        text-decoration: none;\r\n    }\r\n\r\n    a:hover {\r\n        color: #125699;\r\n    }\r\n\r\n    .terminal {\r\n        position: relative;\r\n        width: 80%;\r\n        max-width: 600px;\r\n        border-radius: 6px;\r\n        padding-top: 45px;\r\n        margin-top: 8px;\r\n        overflow: hidden;\r\n        background-color: rgb(15, 15, 16);\r\n    }\r\n\r\n    .terminal::before {\r\n        content: \"\\2022 \\2022 \\2022\";\r\n        position: absolute;\r\n        top: 0;\r\n        left: 0;\r\n        height: 4px;\r\n        background: rgb(58, 58, 58);\r\n        color: #c2c3c4;\r\n        width: 100%;\r\n        font-size: 2rem;\r\n        line-height: 0;\r\n        padding: 14px 0;\r\n        text-indent: 4px;\r\n    }\r\n\r\n    .terminal pre {\r\n        font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;\r\n        color: white;\r\n        padding: 0 1rem 1rem;\r\n        margin: 0;\r\n    }\r\n\r\n    .circle-link {\r\n        height: 40px;\r\n        width: 40px;\r\n        border-radius: 40px;\r\n        margin: 8px;\r\n        background-color: white;\r\n        border: 1px solid #eeeeee;\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        cursor: pointer;\r\n        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\r\n        transition: 1s ease-out;\r\n    }\r\n\r\n    .circle-link:hover {\r\n        transform: translateY(-0.25rem);\r\n        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\r\n    }\r\n\r\n    footer {\r\n        margin-top: 8px;\r\n        display: flex;\r\n        align-items: center;\r\n        line-height: 20px;\r\n    }\r\n\r\n    footer a {\r\n        display: flex;\r\n        align-items: center;\r\n    }\r\n\r\n    .github-star-badge {\r\n        color: #24292e;\r\n        display: flex;\r\n        align-items: center;\r\n        font-size: 12px;\r\n        padding: 3px 10px;\r\n        border: 1px solid rgba(27, 31, 35, .2);\r\n        border-radius: 3px;\r\n        background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);\r\n        margin-left: 4px;\r\n        font-weight: 600;\r\n        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;\r\n    }\r\n\r\n    .github-star-badge:hover {\r\n        background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);\r\n        border-color: rgba(27, 31, 35, .35);\r\n        background-position: -.5em;\r\n    }\r\n\r\n    .github-star-badge .material-icons {\r\n        height: 16px;\r\n        width: 16px;\r\n        margin-right: 4px;\r\n    }\r\n\r\n    svg#clouds {\r\n        position: fixed;\r\n        bottom: -160px;\r\n        left: -230px;\r\n        z-index: -10;\r\n        width: 1920px;\r\n    }\r\n\r\n\r\n    /* Responsive Styles */\r\n    @media screen and (max-width: 767px) {\r\n\r\n        .card-container>*:not(.circle-link),\r\n        .terminal {\r\n            width: 100%;\r\n        }\r\n\r\n        .card:not(.highlight-card) {\r\n            height: 16px;\r\n            margin: 8px 0;\r\n        }\r\n\r\n        .card.highlight-card span {\r\n            margin-left: 72px;\r\n        }\r\n\r\n        svg#rocket-smoke {\r\n            right: 120px;\r\n            transform: rotate(-5deg);\r\n        }\r\n    }\r\n\r\n    @media screen and (max-width: 575px) {\r\n        svg#rocket-smoke {\r\n            display: none;\r\n            visibility: hidden;\r\n        }\r\n    }\r\n</style>\r\n\r\n<!-- Toolbar -->\r\n<div class=\"toolbar\" role=\"banner\">\r\n    <img width=\"40\" alt=\"Angular Logo\"\r\n        src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\" />\r\n    <span>Welcome</span>\r\n    <div class=\"spacer\"></div>\r\n    <a aria-label=\"Angular on twitter\" target=\"_blank\" rel=\"noopener\" href=\"https://twitter.com/angular\"\r\n        title=\"Twitter\">\r\n\r\n        <svg id=\"twitter-logo\" height=\"24\" data-name=\"Logo — FIXED\" xmlns=\"http://www.w3.org/2000/svg\"\r\n            viewBox=\"0 0 400 400\">\r\n            <defs>\r\n                <style>\r\n                    .cls-1 {\r\n                        fill: none;\r\n                    }\r\n\r\n                    .cls-2 {\r\n                        fill: #ffffff;\r\n                    }\r\n                </style>\r\n            </defs>\r\n            <rect class=\"cls-1\" width=\"400\" height=\"400\" />\r\n            <path class=\"cls-2\"\r\n                d=\"M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23\" />\r\n        </svg>\r\n\r\n    </a>\r\n</div>\r\n\r\n<div class=\"content\" role=\"main\">\r\n\r\n    <!-- Highlight Card -->\r\n    <div class=\"card highlight-card card-small\">\r\n\r\n        <svg id=\"rocket\" alt=\"Rocket Ship\" xmlns=\"http://www.w3.org/2000/svg\" width=\"101.678\" height=\"101.678\"\r\n            viewBox=\"0 0 101.678 101.678\">\r\n            <g id=\"Group_83\" data-name=\"Group 83\" transform=\"translate(-141 -696)\">\r\n                <circle id=\"Ellipse_8\" data-name=\"Ellipse 8\" cx=\"50.839\" cy=\"50.839\" r=\"50.839\"\r\n                    transform=\"translate(141 696)\" fill=\"#dd0031\" />\r\n                <g id=\"Group_47\" data-name=\"Group 47\" transform=\"translate(165.185 720.185)\">\r\n                    <path id=\"Path_33\" data-name=\"Path 33\"\r\n                        d=\"M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z\"\r\n                        transform=\"translate(0.371 3.363)\" fill=\"#fff\" />\r\n                    <path id=\"Path_34\" data-name=\"Path 34\"\r\n                        d=\"M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z\"\r\n                        transform=\"translate(0 0.005)\" fill=\"#fff\" />\r\n                </g>\r\n            </g>\r\n        </svg>\r\n\r\n        <span>{{ title }} app is running!</span>\r\n\r\n        <svg id=\"rocket-smoke\" alt=\"Rocket Ship Smoke\" xmlns=\"http://www.w3.org/2000/svg\" width=\"516.119\"\r\n            height=\"1083.632\" viewBox=\"0 0 516.119 1083.632\">\r\n            <path id=\"Path_40\" data-name=\"Path 40\"\r\n                d=\"M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z\"\r\n                transform=\"translate(-147.025 -140.939)\" fill=\"#f5f5f5\" />\r\n        </svg>\r\n\r\n    </div>\r\n\r\n    <!-- Resources -->\r\n    <h2>Resources</h2>\r\n    <p>Here are some links to help you get started:</p>\r\n\r\n    <div class=\"card-container\">\r\n        <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z\" /></svg>\r\n\r\n            <span>Learn Angular</span>\r\n\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" /></svg> </a>\r\n\r\n        <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\" />\r\n            </svg>\r\n\r\n            <span>CLI Documentation</span>\r\n\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" /></svg>\r\n        </a>\r\n\r\n        <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path\r\n                    d=\"M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z\" />\r\n            </svg>\r\n\r\n            <span>Angular Blog</span>\r\n\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" /></svg>\r\n        </a>\r\n\r\n    </div>\r\n\r\n    <!-- Next Steps -->\r\n    <h2>Next Steps</h2>\r\n    <p>What do you want to do next with your app?</p>\r\n\r\n    <input type=\"hidden\" #selection>\r\n\r\n    <div class=\"card-container\">\r\n        <div class=\"card card-small\" (click)=\"selection.value = 'component'\" tabindex=\"0\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\" /></svg>\r\n\r\n            <span>New Component</span>\r\n        </div>\r\n\r\n        <div class=\"card card-small\" (click)=\"selection.value = 'material'\" tabindex=\"0\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\" /></svg>\r\n\r\n            <span>Angular Material</span>\r\n        </div>\r\n\r\n        <div class=\"card card-small\" (click)=\"selection.value = 'dependency'\" tabindex=\"0\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\" /></svg>\r\n\r\n            <span>Add Dependency</span>\r\n        </div>\r\n\r\n        <div class=\"card card-small\" (click)=\"selection.value = 'test'\" tabindex=\"0\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\" /></svg>\r\n\r\n            <span>Run and Watch Tests</span>\r\n        </div>\r\n\r\n        <div class=\"card card-small\" (click)=\"selection.value = 'build'\" tabindex=\"0\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\" /></svg>\r\n\r\n            <span>Build for Production</span>\r\n        </div>\r\n    </div>\r\n\r\n    <!-- Terminal -->\r\n    <div class=\"terminal\" [ngSwitch]=\"selection.value\">\r\n        <pre *ngSwitchDefault>ng generate component xyz</pre>\r\n        <pre *ngSwitchCase=\"'material'\">ng add @angular/material</pre>\r\n        <pre *ngSwitchCase=\"'dependency'\">ng add _____</pre>\r\n        <pre *ngSwitchCase=\"'test'\">ng test</pre>\r\n        <pre *ngSwitchCase=\"'build'\">ng build --prod</pre>\r\n    </div>\r\n\r\n    <!-- Links -->\r\n    <div class=\"card-container\">\r\n        <a class=\"circle-link\" title=\"Animations\" href=\"https://angular.io/guide/animations\" target=\"_blank\"\r\n            rel=\"noopener\">\r\n            <svg id=\"Group_20\" data-name=\"Group 20\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.813\" height=\"23.453\"\r\n                viewBox=\"0 0 21.813 23.453\">\r\n                <path id=\"Path_15\" data-name=\"Path 15\"\r\n                    d=\"M4099.584,972.736h0l-10.882,3.9,1.637,14.4,9.245,5.153,9.245-5.153,1.686-14.4Z\"\r\n                    transform=\"translate(-4088.702 -972.736)\" fill=\"#ffa726\" />\r\n                <path id=\"Path_16\" data-name=\"Path 16\" d=\"M4181.516,972.736v23.453l9.245-5.153,1.686-14.4Z\"\r\n                    transform=\"translate(-4170.633 -972.736)\" fill=\"#fb8c00\" />\r\n                <path id=\"Path_17\" data-name=\"Path 17\" d=\"M4137.529,1076.127l-7.7-3.723,4.417-2.721,7.753,3.723Z\"\r\n                    transform=\"translate(-4125.003 -1058.315)\" fill=\"#ffe0b2\" />\r\n                <path id=\"Path_18\" data-name=\"Path 18\" d=\"M4137.529,1051.705l-7.7-3.723,4.417-2.721,7.753,3.723Z\"\r\n                    transform=\"translate(-4125.003 -1036.757)\" fill=\"#fff3e0\" />\r\n                <path id=\"Path_19\" data-name=\"Path 19\" d=\"M4137.529,1027.283l-7.7-3.723,4.417-2.721,7.753,3.723Z\"\r\n                    transform=\"translate(-4125.003 -1015.199)\" fill=\"#fff\" />\r\n            </svg>\r\n        </a>\r\n\r\n        <a class=\"circle-link\" title=\"CLI\" href=\"https://cli.angular.io/\" target=\"_blank\" rel=\"noopener\">\r\n            <svg alt=\"Angular CLI Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.762\" height=\"23.447\"\r\n                viewBox=\"0 0 21.762 23.447\">\r\n                <g id=\"Group_21\" data-name=\"Group 21\" transform=\"translate(0)\">\r\n                    <path id=\"Path_20\" data-name=\"Path 20\"\r\n                        d=\"M2660.313,313.618h0l-10.833,3.9,1.637,14.4,9.2,5.152,9.244-5.152,1.685-14.4Z\"\r\n                        transform=\"translate(-2649.48 -313.618)\" fill=\"#37474f\" />\r\n                    <path id=\"Path_21\" data-name=\"Path 21\" d=\"M2741.883,313.618v23.447l9.244-5.152,1.685-14.4Z\"\r\n                        transform=\"translate(-2731.05 -313.618)\" fill=\"#263238\" />\r\n                    <path id=\"Path_22\" data-name=\"Path 22\"\r\n                        d=\"M2692.293,379.169h11.724V368.618h-11.724Zm11.159-.6h-10.608v-9.345h10.621v9.345Z\"\r\n                        transform=\"translate(-2687.274 -362.17)\" fill=\"#fff\" />\r\n                    <path id=\"Path_23\" data-name=\"Path 23\"\r\n                        d=\"M2709.331,393.688l.4.416,2.265-2.28-2.294-2.294-.4.4,1.893,1.893Z\"\r\n                        transform=\"translate(-2702.289 -380.631)\" fill=\"#fff\" />\r\n                    <rect id=\"Rectangle_12\" data-name=\"Rectangle 12\" width=\"3.517\" height=\"0.469\"\r\n                        transform=\"translate(9.709 13.744)\" fill=\"#fff\" />\r\n                </g>\r\n            </svg>\r\n        </a>\r\n\r\n        <a class=\"circle-link\" title=\"Augury\" href=\"https://augury.rangle.io/\" target=\"_blank\" rel=\"noopener\">\r\n            <svg alt=\"Angular Augury Logo\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"\r\n                width=\"21.81\" height=\"23.447\" viewBox=\"0 0 21.81 23.447\">\r\n                <defs>\r\n                    <clipPath id=\"clip-path\">\r\n                        <rect id=\"Rectangle_13\" data-name=\"Rectangle 13\" width=\"10.338\" height=\"10.27\" fill=\"none\" />\r\n                    </clipPath>\r\n                </defs>\r\n                <g id=\"Group_25\" data-name=\"Group 25\" transform=\"translate(0)\">\r\n                    <path id=\"Path_24\" data-name=\"Path 24\"\r\n                        d=\"M3780.155,311.417h0l-10.881,3.9,1.637,14.4,9.244,5.152,9.244-5.152,1.685-14.4Z\"\r\n                        transform=\"translate(-3769.274 -311.417)\" fill=\"#4a3493\" />\r\n                    <path id=\"Path_25\" data-name=\"Path 25\" d=\"M3862.088,311.417v23.447l9.244-5.152,1.685-14.4Z\"\r\n                        transform=\"translate(-3851.207 -311.417)\" fill=\"#311b92\" />\r\n                    <g id=\"Group_24\" data-name=\"Group 24\" transform=\"translate(6.194 6.73)\" opacity=\"0.5\">\r\n                        <g id=\"Group_23\" data-name=\"Group 23\" transform=\"translate(0 0)\">\r\n                            <g id=\"Group_22\" data-name=\"Group 22\" clip-path=\"url(#clip-path)\">\r\n                                <path id=\"Path_26\" data-name=\"Path 26\"\r\n                                    d=\"M3832.4,373.252a5.168,5.168,0,1,1-5.828-4.383,5.216,5.216,0,0,1,2.574.3,3.017,3.017,0,1,0,3.252,4.086Z\"\r\n                                    transform=\"translate(-3822.107 -368.821)\" fill=\"#fff\" />\r\n                            </g>\r\n                        </g>\r\n                    </g>\r\n                    <path id=\"Path_27\" data-name=\"Path 27\"\r\n                        d=\"M3830.582,370.848a5.162,5.162,0,1,1-3.254-4.086,3.017,3.017,0,1,0,3.252,4.086Z\"\r\n                        transform=\"translate(-3814.311 -359.969)\" fill=\"#fff\" />\r\n                </g>\r\n            </svg>\r\n        </a>\r\n\r\n        <a class=\"circle-link\" title=\"Protractor\" href=\"https://www.protractortest.org/\" target=\"_blank\" rel=\"noopener\">\r\n            <svg alt=\"Angular Protractor Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.81\" height=\"23.447\"\r\n                viewBox=\"0 0 21.81 23.447\">\r\n                <g id=\"Group_26\" data-name=\"Group 26\" transform=\"translate(0)\">\r\n                    <path id=\"Path_28\" data-name=\"Path 28\"\r\n                        d=\"M4620.155,311.417h0l-10.881,3.9,1.637,14.4,9.244,5.152,9.244-5.152,1.685-14.4Z\"\r\n                        transform=\"translate(-4609.274 -311.417)\" fill=\"#e13439\" />\r\n                    <path id=\"Path_29\" data-name=\"Path 29\" d=\"M4702.088,311.417v23.447l9.244-5.152,1.685-14.4Z\"\r\n                        transform=\"translate(-4691.207 -311.417)\" fill=\"#b52f32\" />\r\n                    <path id=\"Path_30\" data-name=\"Path 30\"\r\n                        d=\"M4651.044,369.58v-.421h1.483a7.6,7.6,0,0,0-2.106-5.052l-1.123,1.123-.3-.3,1.122-1.121a7.588,7.588,0,0,0-4.946-2.055v1.482h-.421v-1.485a7.589,7.589,0,0,0-5.051,2.058l1.122,1.121-.3.3-1.123-1.123a7.591,7.591,0,0,0-2.106,5.052h1.482v.421h-1.489v1.734h15.241V369.58Zm-10.966-.263a4.835,4.835,0,0,1,9.67,0Z\"\r\n                        transform=\"translate(-4634.008 -355.852)\" fill=\"#fff\" />\r\n                </g>\r\n            </svg>\r\n        </a>\r\n\r\n        <a class=\"circle-link\" title=\"Find a Local Meetup\" href=\"https://www.meetup.com/find/?keywords=angular\"\r\n            target=\"_blank\" rel=\"noopener\">\r\n            <svg alt=\"Meetup Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24.607\" height=\"23.447\"\r\n                viewBox=\"0 0 24.607 23.447\">\r\n                <path id=\"logo--mSwarm\"\r\n                    d=\"M21.221,14.95A4.393,4.393,0,0,1,17.6,19.281a4.452,4.452,0,0,1-.8.069c-.09,0-.125.035-.154.117a2.939,2.939,0,0,1-2.506,2.091,2.868,2.868,0,0,1-2.248-.624.168.168,0,0,0-.245-.005,3.926,3.926,0,0,1-2.589.741,4.015,4.015,0,0,1-3.7-3.347,2.7,2.7,0,0,1-.043-.38c0-.106-.042-.146-.143-.166a3.524,3.524,0,0,1-1.516-.69A3.623,3.623,0,0,1,2.23,14.557a3.66,3.66,0,0,1,1.077-3.085.138.138,0,0,0,.026-.2,3.348,3.348,0,0,1-.451-1.821,3.46,3.46,0,0,1,2.749-3.28.44.44,0,0,0,.355-.281,5.072,5.072,0,0,1,3.863-3,5.028,5.028,0,0,1,3.555.666.31.31,0,0,0,.271.03A4.5,4.5,0,0,1,18.3,4.7a4.4,4.4,0,0,1,1.334,2.751,3.658,3.658,0,0,1,.022.706.131.131,0,0,0,.1.157,2.432,2.432,0,0,1,1.574,1.645,2.464,2.464,0,0,1-.7,2.616c-.065.064-.051.1-.014.166A4.321,4.321,0,0,1,21.221,14.95ZM13.4,14.607a2.09,2.09,0,0,0,1.409,1.982,4.7,4.7,0,0,0,1.275.221,1.807,1.807,0,0,0,.9-.151.542.542,0,0,0,.321-.545.558.558,0,0,0-.359-.534,1.2,1.2,0,0,0-.254-.078c-.262-.047-.526-.086-.787-.138a.674.674,0,0,1-.617-.75,3.394,3.394,0,0,1,.218-1.109c.217-.658.509-1.286.79-1.918a15.609,15.609,0,0,0,.745-1.86,1.95,1.95,0,0,0,.06-1.073,1.286,1.286,0,0,0-1.051-1.033,1.977,1.977,0,0,0-1.521.2.339.339,0,0,1-.446-.042c-.1-.092-.2-.189-.307-.284a1.214,1.214,0,0,0-1.643-.061,7.563,7.563,0,0,1-.614.512A.588.588,0,0,1,10.883,8c-.215-.115-.437-.215-.659-.316a2.153,2.153,0,0,0-.695-.248A2.091,2.091,0,0,0,7.541,8.562a9.915,9.915,0,0,0-.405.986c-.559,1.545-1.015,3.123-1.487,4.7a1.528,1.528,0,0,0,.634,1.777,1.755,1.755,0,0,0,1.5.211,1.35,1.35,0,0,0,.824-.858c.543-1.281,1.032-2.584,1.55-3.875.142-.355.28-.712.432-1.064a.548.548,0,0,1,.851-.24.622.622,0,0,1,.185.539,2.161,2.161,0,0,1-.181.621c-.337.852-.68,1.7-1.018,2.552a2.564,2.564,0,0,0-.173.528.624.624,0,0,0,.333.71,1.073,1.073,0,0,0,.814.034,1.22,1.22,0,0,0,.657-.655q.758-1.488,1.511-2.978.35-.687.709-1.37a1.073,1.073,0,0,1,.357-.434.43.43,0,0,1,.463-.016.373.373,0,0,1,.153.387.7.7,0,0,1-.057.236c-.065.157-.127.316-.2.469-.42.883-.846,1.763-1.262,2.648A2.463,2.463,0,0,0,13.4,14.607Zm5.888,6.508a1.09,1.09,0,0,0-2.179.006,1.09,1.09,0,0,0,2.179-.006ZM1.028,12.139a1.038,1.038,0,1,0,.01-2.075,1.038,1.038,0,0,0-.01,2.075ZM13.782.528a1.027,1.027,0,1,0-.011,2.055A1.027,1.027,0,0,0,13.782.528ZM22.21,6.95a.882.882,0,0,0-1.763.011A.882.882,0,0,0,22.21,6.95ZM4.153,4.439a.785.785,0,1,0,.787-.78A.766.766,0,0,0,4.153,4.439Zm8.221,18.22a.676.676,0,1,0-.677.666A.671.671,0,0,0,12.374,22.658ZM22.872,12.2a.674.674,0,0,0-.665.665.656.656,0,0,0,.655.643.634.634,0,0,0,.655-.644A.654.654,0,0,0,22.872,12.2ZM7.171-.123A.546.546,0,0,0,6.613.43a.553.553,0,1,0,1.106,0A.539.539,0,0,0,7.171-.123ZM24.119,9.234a.507.507,0,0,0-.493.488.494.494,0,0,0,.494.494.48.48,0,0,0,.487-.483A.491.491,0,0,0,24.119,9.234Zm-19.454,9.7a.5.5,0,0,0-.488-.488.491.491,0,0,0-.487.5.483.483,0,0,0,.491.479A.49.49,0,0,0,4.665,18.936Z\"\r\n                    transform=\"translate(0 0.123)\" fill=\"#f64060\" />\r\n            </svg>\r\n        </a>\r\n\r\n        <a class=\"circle-link\" title=\"Join the Conversation on Gitter\" href=\"https://gitter.im/angular/angular\"\r\n            target=\"_blank\" rel=\"noopener\">\r\n            <svg alt=\"Gitter Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.447\" height=\"19.447\"\r\n                viewBox=\"0 0 19.447 19.447\">\r\n                <g id=\"Group_40\" data-name=\"Group 40\" transform=\"translate(-1612 -405)\">\r\n                    <rect id=\"Rectangle_19\" data-name=\"Rectangle 19\" width=\"19.447\" height=\"19.447\"\r\n                        transform=\"translate(1612 405)\" fill=\"#e60257\" />\r\n                    <g id=\"gitter\" transform=\"translate(1617.795 408.636)\">\r\n                        <g id=\"Group_33\" data-name=\"Group 33\" transform=\"translate(0 0)\">\r\n                            <rect id=\"Rectangle_15\" data-name=\"Rectangle 15\" width=\"1.04\" height=\"9.601\"\r\n                                transform=\"translate(2.304 2.324)\" fill=\"#fff\" />\r\n                            <rect id=\"Rectangle_16\" data-name=\"Rectangle 16\" width=\"1.04\" height=\"9.601\"\r\n                                transform=\"translate(4.607 2.324)\" fill=\"#fff\" />\r\n                            <rect id=\"Rectangle_17\" data-name=\"Rectangle 17\" width=\"1.04\" height=\"4.648\"\r\n                                transform=\"translate(6.91 2.324)\" fill=\"#fff\" />\r\n                            <rect id=\"Rectangle_18\" data-name=\"Rectangle 18\" width=\"1.04\" height=\"6.971\"\r\n                                transform=\"translate(0 0)\" fill=\"#fff\" />\r\n                        </g>\r\n                    </g>\r\n                </g>\r\n            </svg>\r\n        </a>\r\n    </div>\r\n\r\n    <!-- Footer -->\r\n    <footer>\r\n        Love Angular?&nbsp;\r\n        <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\"> Give our repo a star.\r\n            <div class=\"github-star-badge\">\r\n                <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\"\r\n                    viewBox=\"0 0 24 24\">\r\n                    <path d=\"M0 0h24v24H0z\" fill=\"none\" />\r\n                    <path\r\n                        d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" />\r\n                </svg>\r\n                Star\r\n            </div>\r\n        </a>\r\n        <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\">\r\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\">\r\n                <path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" fill=\"#1976d2\" />\r\n                <path d=\"M0 0h24v24H0z\" fill=\"none\" /></svg>\r\n        </a>\r\n    </footer>\r\n\r\n    <svg id=\"clouds\" alt=\"Gray Clouds Background\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2611.084\" height=\"485.677\"\r\n        viewBox=\"0 0 2611.084 485.677\">\r\n        <path id=\"Path_39\" data-name=\"Path 39\"\r\n            d=\"M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z\"\r\n            transform=\"translate(142.69 -634.312)\" fill=\"#eee\" />\r\n    </svg>\r\n\r\n</div>\r\n\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->\r\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/raw-data/raw-data.component.html": 
+        /*!***************************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/raw-data/raw-data.component.html ***!
+          \***************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<div id='chart' #chart (window:resize)='onResize($event)'></div>\n<div class=\"tooltip\" style=\"opacity: 0; position: absolute;\" #tooltip></div>");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/test/test.component.html": 
+        /*!*******************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/test/test.component.html ***!
+          \*******************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <div class=\"col\">\r\n        <app-raw-data [data]=\"data\" [functions]=\"functions\"></app-raw-data>\r\n    </div>\r\n</div>\r\n<div class=\"content\" role=\"main\">\r\n    <div class=\"card-container\" *ngIf=\"this.keys.length > 0\">\r\n        <table style=\"width:100%\" *ngIf=\"this.data\">\r\n            <tr>\r\n                <th *ngFor=\"let key of this.keys\">{{key}}</th>\r\n            </tr>\r\n            <tr *ngFor=\"let datum of this.data\">\r\n                <td *ngFor=\"let key of this.keys\">{{datum['raw'][key]}}</td>\r\n            </tr>\r\n        </table>\r\n    </div>\r\n</div>");
+            /***/ 
+        }),
+        /***/ "./node_modules/tslib/tslib.es6.js": 
+        /*!*****************************************!*\
+          !*** ./node_modules/tslib/tslib.es6.js ***!
+          \*****************************************/
+        /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function () { return __extends; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function () { return __assign; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function () { return __rest; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function () { return __decorate; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function () { return __param; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function () { return __metadata; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function () { return __awaiter; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function () { return __generator; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function () { return __exportStar; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function () { return __values; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function () { return __read; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function () { return __spread; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () { return __spreadArrays; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function () { return __await; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () { return __asyncGenerator; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () { return __asyncDelegator; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function () { return __asyncValues; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () { return __makeTemplateObject; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function () { return __importStar; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function () { return __importDefault; });
+            /*! *****************************************************************************
+            Copyright (c) Microsoft Corporation. All rights reserved.
+            Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+            this file except in compliance with the License. You may obtain a copy of the
+            License at http://www.apache.org/licenses/LICENSE-2.0
+            
+            THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+            KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+            WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+            MERCHANTABLITY OR NON-INFRINGEMENT.
+            
+            See the Apache Version 2.0 License for specific language governing permissions
+            and limitations under the License.
+            ***************************************************************************** */
+            /* global Reflect, Promise */
+            var extendStatics = function (d, b) {
+                extendStatics = Object.setPrototypeOf ||
+                    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+                    function (d, b) { for (var p in b)
+                        if (b.hasOwnProperty(p))
+                            d[p] = b[p]; };
+                return extendStatics(d, b);
+            };
+            function __extends(d, b) {
+                extendStatics(d, b);
+                function __() { this.constructor = d; }
+                d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+            }
+            var __assign = function () {
+                __assign = Object.assign || function __assign(t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+                        for (var p in s)
+                            if (Object.prototype.hasOwnProperty.call(s, p))
+                                t[p] = s[p];
+                    }
+                    return t;
+                };
+                return __assign.apply(this, arguments);
+            };
+            function __rest(s, e) {
+                var t = {};
+                for (var p in s)
+                    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+                        t[p] = s[p];
+                if (s != null && typeof Object.getOwnPropertySymbols === "function")
+                    for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+                        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                            t[p[i]] = s[p[i]];
+                    }
+                return t;
+            }
+            function __decorate(decorators, target, key, desc) {
+                var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+                if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+                    r = Reflect.decorate(decorators, target, key, desc);
+                else
+                    for (var i = decorators.length - 1; i >= 0; i--)
+                        if (d = decorators[i])
+                            r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+                return c > 3 && r && Object.defineProperty(target, key, r), r;
+            }
+            function __param(paramIndex, decorator) {
+                return function (target, key) { decorator(target, key, paramIndex); };
+            }
+            function __metadata(metadataKey, metadataValue) {
+                if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+                    return Reflect.metadata(metadataKey, metadataValue);
+            }
+            function __awaiter(thisArg, _arguments, P, generator) {
+                return new (P || (P = Promise))(function (resolve, reject) {
+                    function fulfilled(value) { try {
+                        step(generator.next(value));
+                    }
+                    catch (e) {
+                        reject(e);
+                    } }
+                    function rejected(value) { try {
+                        step(generator["throw"](value));
+                    }
+                    catch (e) {
+                        reject(e);
+                    } }
+                    function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+                    step((generator = generator.apply(thisArg, _arguments || [])).next());
+                });
+            }
+            function __generator(thisArg, body) {
+                var _ = { label: 0, sent: function () { if (t[0] & 1)
+                        throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+                return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
+                function verb(n) { return function (v) { return step([n, v]); }; }
+                function step(op) {
+                    if (f)
+                        throw new TypeError("Generator is already executing.");
+                    while (_)
+                        try {
+                            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
+                                return t;
+                            if (y = 0, t)
+                                op = [op[0] & 2, t.value];
+                            switch (op[0]) {
+                                case 0:
+                                case 1:
+                                    t = op;
+                                    break;
+                                case 4:
+                                    _.label++;
+                                    return { value: op[1], done: false };
+                                case 5:
+                                    _.label++;
+                                    y = op[1];
+                                    op = [0];
+                                    continue;
+                                case 7:
+                                    op = _.ops.pop();
+                                    _.trys.pop();
+                                    continue;
+                                default:
+                                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                                        _ = 0;
+                                        continue;
+                                    }
+                                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                                        _.label = op[1];
+                                        break;
+                                    }
+                                    if (op[0] === 6 && _.label < t[1]) {
+                                        _.label = t[1];
+                                        t = op;
+                                        break;
+                                    }
+                                    if (t && _.label < t[2]) {
+                                        _.label = t[2];
+                                        _.ops.push(op);
+                                        break;
+                                    }
+                                    if (t[2])
+                                        _.ops.pop();
+                                    _.trys.pop();
+                                    continue;
+                            }
+                            op = body.call(thisArg, _);
+                        }
+                        catch (e) {
+                            op = [6, e];
+                            y = 0;
+                        }
+                        finally {
+                            f = t = 0;
+                        }
+                    if (op[0] & 5)
+                        throw op[1];
+                    return { value: op[0] ? op[1] : void 0, done: true };
+                }
+            }
+            function __exportStar(m, exports) {
+                for (var p in m)
+                    if (!exports.hasOwnProperty(p))
+                        exports[p] = m[p];
+            }
+            function __values(o) {
+                var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+                if (m)
+                    return m.call(o);
+                return {
+                    next: function () {
+                        if (o && i >= o.length)
+                            o = void 0;
+                        return { value: o && o[i++], done: !o };
+                    }
+                };
+            }
+            function __read(o, n) {
+                var m = typeof Symbol === "function" && o[Symbol.iterator];
+                if (!m)
+                    return o;
+                var i = m.call(o), r, ar = [], e;
+                try {
+                    while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+                        ar.push(r.value);
+                }
+                catch (error) {
+                    e = { error: error };
+                }
+                finally {
+                    try {
+                        if (r && !r.done && (m = i["return"]))
+                            m.call(i);
+                    }
+                    finally {
+                        if (e)
+                            throw e.error;
+                    }
+                }
+                return ar;
+            }
+            function __spread() {
+                for (var ar = [], i = 0; i < arguments.length; i++)
+                    ar = ar.concat(__read(arguments[i]));
+                return ar;
+            }
+            function __spreadArrays() {
+                for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+                    s += arguments[i].length;
+                for (var r = Array(s), k = 0, i = 0; i < il; i++)
+                    for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+                        r[k] = a[j];
+                return r;
+            }
+            ;
+            function __await(v) {
+                return this instanceof __await ? (this.v = v, this) : new __await(v);
+            }
+            function __asyncGenerator(thisArg, _arguments, generator) {
+                if (!Symbol.asyncIterator)
+                    throw new TypeError("Symbol.asyncIterator is not defined.");
+                var g = generator.apply(thisArg, _arguments || []), i, q = [];
+                return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+                function verb(n) { if (g[n])
+                    i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+                function resume(n, v) { try {
+                    step(g[n](v));
+                }
+                catch (e) {
+                    settle(q[0][3], e);
+                } }
+                function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+                function fulfill(value) { resume("next", value); }
+                function reject(value) { resume("throw", value); }
+                function settle(f, v) { if (f(v), q.shift(), q.length)
+                    resume(q[0][0], q[0][1]); }
+            }
+            function __asyncDelegator(o) {
+                var i, p;
+                return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+                function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+            }
+            function __asyncValues(o) {
+                if (!Symbol.asyncIterator)
+                    throw new TypeError("Symbol.asyncIterator is not defined.");
+                var m = o[Symbol.asyncIterator], i;
+                return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+                function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+                function settle(resolve, reject, d, v) { Promise.resolve(v).then(function (v) { resolve({ value: v, done: d }); }, reject); }
+            }
+            function __makeTemplateObject(cooked, raw) {
+                if (Object.defineProperty) {
+                    Object.defineProperty(cooked, "raw", { value: raw });
+                }
+                else {
+                    cooked.raw = raw;
+                }
+                return cooked;
+            }
+            ;
+            function __importStar(mod) {
+                if (mod && mod.__esModule)
+                    return mod;
+                var result = {};
+                if (mod != null)
+                    for (var k in mod)
+                        if (Object.hasOwnProperty.call(mod, k))
+                            result[k] = mod[k];
+                result.default = mod;
+                return result;
+            }
+            function __importDefault(mod) {
+                return (mod && mod.__esModule) ? mod : { default: mod };
+            }
+            /***/ 
+        }),
+        /***/ "./src/app/app-routing.module.ts": 
+        /*!***************************************!*\
+          !*** ./src/app/app-routing.module.ts ***!
+          \***************************************/
+        /*! exports provided: AppRoutingModule */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function () { return AppRoutingModule; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var src_app_components_home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/components/home/home.component */ "./src/app/components/home/home.component.ts");
+            /* harmony import */ var src_app_components_test_test_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/components/test/test.component */ "./src/app/components/test/test.component.ts");
+            /* harmony import */ var src_app_components_raw_data_raw_data_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/components/raw-data/raw-data.component */ "./src/app/components/raw-data/raw-data.component.ts");
+            var routes = [
+                {
+                    component: src_app_components_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"], path: '',
+                    data: { breadcrumb: 'Home', description: 'Just mucking around!' },
+                },
+                {
+                    component: src_app_components_test_test_component__WEBPACK_IMPORTED_MODULE_4__["TestComponent"], path: 'test',
+                    data: { breadcrumb: 'Test', description: 'Just mucking around!' },
+                },
+                {
+                    component: src_app_components_raw_data_raw_data_component__WEBPACK_IMPORTED_MODULE_5__["RawDataComponent"], path: 'raw',
+                    data: { breadcrumb: 'Raw', description: 'Graph stuff.' },
+                },
+            ];
+            var AppRoutingModule = /** @class */ (function () {
+                function AppRoutingModule() {
+                }
+                return AppRoutingModule;
+            }());
+            AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+                    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+                    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+                })
+            ], AppRoutingModule);
+            /***/ 
+        }),
+        /***/ "./src/app/app.component.scss": 
+        /*!************************************!*\
+          !*** ./src/app/app.component.scss ***!
+          \************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */");
+            /***/ 
+        }),
+        /***/ "./src/app/app.component.ts": 
+        /*!**********************************!*\
+          !*** ./src/app/app.component.ts ***!
+          \**********************************/
+        /*! exports provided: AppComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function () { return AppComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var AppComponent = /** @class */ (function () {
+                function AppComponent() {
+                }
+                return AppComponent;
+            }());
+            AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-root',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")).default]
+                })
+            ], AppComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/app.module.ts": 
+        /*!*******************************!*\
+          !*** ./src/app/app.module.ts ***!
+          \*******************************/
+        /*! exports provided: AppModule */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function () { return AppModule; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+            /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+            /* harmony import */ var _components_test_test_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/test/test.component */ "./src/app/components/test/test.component.ts");
+            /* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/api.service */ "./src/app/services/api.service.ts");
+            /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+            /* harmony import */ var _components_raw_data_raw_data_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/raw-data/raw-data.component */ "./src/app/components/raw-data/raw-data.component.ts");
+            var AppModule = /** @class */ (function () {
+                function AppModule() {
+                }
+                return AppModule;
+            }());
+            AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+                    declarations: [
+                        _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                        _components_test_test_component__WEBPACK_IMPORTED_MODULE_7__["TestComponent"],
+                        _components_home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
+                        _components_raw_data_raw_data_component__WEBPACK_IMPORTED_MODULE_10__["RawDataComponent"],
+                    ],
+                    imports: [
+                        _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                        _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+                        _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
+                        _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                    ],
+                    providers: [
+                        _services_api_service__WEBPACK_IMPORTED_MODULE_8__["ApiService"],
+                    ],
+                    bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+                })
+            ], AppModule);
+            /***/ 
+        }),
+        /***/ "./src/app/components/home/home.component.scss": 
+        /*!*****************************************************!*\
+          !*** ./src/app/components/home/home.component.scss ***!
+          \*****************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIn0= */");
+            /***/ 
+        }),
+        /***/ "./src/app/components/home/home.component.ts": 
+        /*!***************************************************!*\
+          !*** ./src/app/components/home/home.component.ts ***!
+          \***************************************************/
+        /*! exports provided: HomeComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function () { return HomeComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            var HomeComponent = /** @class */ (function () {
+                function HomeComponent() {
+                    this.title = 'swarm-website';
+                }
+                HomeComponent.prototype.ngOnInit = function () {
+                };
+                return HomeComponent;
+            }());
+            HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-home',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/home/home.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.component.scss */ "./src/app/components/home/home.component.scss")).default]
+                })
+            ], HomeComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/components/raw-data/raw-data.component.scss": 
+        /*!*************************************************************!*\
+          !*** ./src/app/components/raw-data/raw-data.component.scss ***!
+          \*************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  /* or display: inline-block; */\n}\n\n.line {\n  fill: none;\n  stroke: steelblue;\n  stroke-width: 5px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yYXctZGF0YS9DOlxcY29kZVxcYXBwc1xcc3VpdGVcXHNlbGZcXHN3YXJtXFx3ZWJzaXRlL3NyY1xcYXBwXFxjb21wb25lbnRzXFxyYXctZGF0YVxccmF3LWRhdGEuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvcmF3LWRhdGEvcmF3LWRhdGEuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBUUE7RUFDRSxjQUFBO0VBQWdCLDhCQUFBO0FDTmxCOztBRFNBO0VBQ0UsVUFBQTtFQUNBLGlCQUFBO0VBQ0EsaUJBQUE7QUNORiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmF3LWRhdGEvcmF3LWRhdGEuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBlbGVtZW50IG9mZnNldFdpZHRoIGlzIDBcclxuLy8gaHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvNTY2NjczNDcvYW5ndWxhcnMtbmF0aXZlZWxlbWVudHMtb2Zmc2V0d2lkdGgtaXMtMFxyXG5cclxuXHJcbi8vIHNjc3MgaXNuJ3Qgd29ya2luZ1xyXG4vLyBodHRwczovL3N0YWNrb3ZlcmZsb3cuY29tL3F1ZXN0aW9ucy8zNjQ3NTE2OC9hbmd1bGFyLTItMC1kMy1qcy1kb250LWFwcGx5LWNzcy1vbi1zdmdcclxuLy8gaHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvMzYyMTQ1NDYvc3R5bGVzLWluLWNvbXBvbmVudC1mb3ItZDMtanMtZG8tbm90LXNob3ctaW4tYW5ndWxhci0yLzM2MjE0NzIzIzM2MjE0NzIzXHJcblxyXG46aG9zdCB7XHJcbiAgZGlzcGxheTogYmxvY2s7IC8qIG9yIGRpc3BsYXk6IGlubGluZS1ibG9jazsgKi9cclxufVxyXG5cclxuLmxpbmUge1xyXG4gIGZpbGw6IG5vbmU7XHJcbiAgc3Ryb2tlOiBzdGVlbGJsdWU7XHJcbiAgc3Ryb2tlLXdpZHRoOiA1cHg7XHJcbn1cclxuXHJcbi8vIC5saW5lLWIge1xyXG4vLyAgIGZpbGw6IG5vbmU7XHJcbi8vICAgc3Ryb2tlOiBzdGVlbGJsdWU7XHJcbi8vICAgc3Ryb2tlLXdpZHRoOiA1cHg7XHJcbi8vIH1cclxuXHJcbi8vIC5saW5lLWcge1xyXG4vLyAgIGZpbGw6IG5vbmU7XHJcbi8vICAgc3Ryb2tlOiBncmVlbjtcclxuLy8gICBzdHJva2Utd2lkdGg6IDVweDtcclxuLy8gfVxyXG5cclxuLy8gLmxpbmUtciB7XHJcbi8vICAgZmlsbDogbm9uZTtcclxuLy8gICBzdHJva2U6IHJlZDtcclxuLy8gICBzdHJva2Utd2lkdGg6IDVweDtcclxuLy8gfVxyXG4iLCI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICAvKiBvciBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7ICovXG59XG5cbi5saW5lIHtcbiAgZmlsbDogbm9uZTtcbiAgc3Ryb2tlOiBzdGVlbGJsdWU7XG4gIHN0cm9rZS13aWR0aDogNXB4O1xufSJdfQ== */");
+            /***/ 
+        }),
+        /***/ "./src/app/components/raw-data/raw-data.component.ts": 
+        /*!***********************************************************!*\
+          !*** ./src/app/components/raw-data/raw-data.component.ts ***!
+          \***********************************************************/
+        /*! exports provided: random, COLOR_MAP, COLORS, RawDataComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "random", function () { return random; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLOR_MAP", function () { return COLOR_MAP; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLORS", function () { return COLORS; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RawDataComponent", function () { return RawDataComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+            function random(length) {
+                return Math.floor(Math.random() * length);
+            }
+            var COLOR_MAP = {
+                'NAVY': '#001f3f',
+                'BLUE': '#0074D9',
+                'AQUA': '#7FDBFF',
+                'TEAL': '#39CCCC',
+                'OLIVE': '#3D9970',
+                'GREEN': '#2ECC40',
+                'LIME': '#01FF70',
+                'YELLOW': '#FFDC00',
+                'ORANGE': '#FF851B',
+                'RED': '#FF4136',
+                'MAROON': '#85144b',
+                'FUCHSIA': '#F012BE',
+                'PURPLE': '#B10DC9',
+                'BLACK': '#111111',
+                'GRAY': '#AAAAAA',
+                'SILVER': '#DDDDDD'
+            };
+            var COLORS = Object.keys(COLOR_MAP);
+            ;
+            ;
+            var RawDataComponent = /** @class */ (function () {
+                function RawDataComponent(_element) {
+                    this._element = _element;
+                    this.element = null;
+                    this.tooltip = null;
+                    this.svg = null;
+                    this.g = null;
+                    this.random_sequence = [];
+                    this.view_initialized = false;
+                    this.tooltip_sustain = false;
+                    this.__parse_date = d3__WEBPACK_IMPORTED_MODULE_2__["timeParse"]('%d-%m-%Y'); // tis a func
+                }
+                RawDataComponent.prototype.ngOnInit = function () {
+                    this.dimensions = {
+                        margin: {
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0
+                        },
+                        width: 0,
+                        height: 0,
+                    };
+                    this.chart = {
+                        x_axis: null,
+                        y_axis: null,
+                        x_scale: null,
+                        y_scale: null,
+                        lines: {},
+                        tooltip: null,
+                    };
+                    var original_sequence = COLORS.map(function (e, i) { return i; });
+                    this.random_sequence = [];
+                    var original_length = original_sequence.length;
+                    for (var i = 0; i < original_length; i++) {
+                        var victim = random(original_sequence.length);
+                        this.random_sequence.push(original_sequence[victim]);
+                        original_sequence.splice(victim);
+                    }
+                };
+                RawDataComponent.prototype.ngOnChanges = function (changes) {
+                    if (this.view_initialized && this.data) {
+                        this.create_chart();
+                    }
+                };
+                RawDataComponent.prototype.ngAfterViewInit = function () {
+                    this.view_initialized = true;
+                };
+                RawDataComponent.prototype.onResize = function ($event) {
+                    this.create_chart();
+                };
+                RawDataComponent.prototype.create_chart = function () {
+                    this.__setup();
+                    this.__build();
+                    this.__populate();
+                    this.__draw_axes('time', 'everything');
+                    this.__legend();
+                };
+                RawDataComponent.prototype.__setup = function () {
+                    this.element = this._element.nativeElement;
+                    this.dimensions.margin = {
+                        top: 15,
+                        right: 15,
+                        bottom: 65,
+                        left: 65,
+                    };
+                    this.dimensions.width = this.element.offsetWidth - this.dimensions.margin.left - this.dimensions.margin.right;
+                    this.dimensions.height = 3 * window.outerHeight / 4 - this.dimensions.margin.bottom - this.dimensions.margin.top;
+                    this.domain_range = {
+                        domain: [],
+                        range: [],
+                    };
+                    var all_x = [];
+                    var all_y = [];
+                    for (var _i = 0, _a = this.data; _i < _a.length; _i++) {
+                        var d = _a[_i];
+                        this.domain_range.domain.push(d['date_created']);
+                    }
+                    for (var name in this.functions) {
+                        if (this.functions.hasOwnProperty(name) && !(name.toLowerCase() === 'date')) {
+                            var functions = this.functions[name];
+                            for (var _b = 0, _c = this.data; _b < _c.length; _b++) {
+                                var d = _c[_b];
+                                this.domain_range.range.push(functions.y(d));
+                            }
+                        }
+                    }
+                    // setting range and setting domain are 2 different steps
+                    this.chart.x_scale = d3__WEBPACK_IMPORTED_MODULE_2__["scaleTime"]()
+                        .domain([d3__WEBPACK_IMPORTED_MODULE_2__["min"](this.domain_range.domain), d3__WEBPACK_IMPORTED_MODULE_2__["max"](this.domain_range.domain)])
+                        .range([0, this.dimensions.width]);
+                    this.chart.y_scale = d3__WEBPACK_IMPORTED_MODULE_2__["scaleLinear"]()
+                        .domain([d3__WEBPACK_IMPORTED_MODULE_2__["min"](this.domain_range.range), d3__WEBPACK_IMPORTED_MODULE_2__["max"](this.domain_range.range)])
+                        .range([this.dimensions.height, 0]);
+                    this.chart.x_axis = d3__WEBPACK_IMPORTED_MODULE_2__["axisBottom"](this.chart.x_scale)
+                        .ticks(5)
+                        .tickPadding(15);
+                    this.chart.y_axis = d3__WEBPACK_IMPORTED_MODULE_2__["axisLeft"](this.chart.y_scale)
+                        .ticks(5)
+                        .tickPadding(10);
+                };
+                RawDataComponent.prototype.__build = function () {
+                    // d3 namespace
+                    var _this = this;
+                    d3__WEBPACK_IMPORTED_MODULE_2__["select"](_this.element).select('svg').remove();
+                    this.svg = d3__WEBPACK_IMPORTED_MODULE_2__["select"](_this.element).append('svg')
+                        .attr('width', _this.dimensions.width + _this.dimensions.margin.left + _this.dimensions.margin.right)
+                        .attr('height', _this.dimensions.height + _this.dimensions.margin.top + _this.dimensions.margin.bottom)
+                        .on('click', function (d) {
+                        _this.tooltip_sustain = !_this.tooltip_sustain;
+                        _this.chart.tooltip.transition()
+                            .duration(500)
+                            .style('opacity', 0);
+                    });
+                    this.g = this.svg.append('g')
+                        .attr('transform', "translate(" + _this.dimensions.margin.left + "," + _this.dimensions.margin.top + ")");
+                    // tooltip generation
+                    this.chart.tooltip = d3__WEBPACK_IMPORTED_MODULE_2__["select"](this.tooltip.nativeElement);
+                };
+                RawDataComponent.prototype.__draw_axes = function (x_label, y_label) {
+                    // d3 namespace
+                    var _this = this;
+                    var x_axis = this.g.append('g')
+                        .attr('class', 'x-axis')
+                        .attr('transform', "translate(0," + (_this.dimensions.height - this.dimensions.margin.bottom) + ")")
+                        .call(_this.chart.x_axis)
+                        .append('text')
+                        .attr('class', 'label')
+                        .attr('x', _this.dimensions.width)
+                        .attr('y', -12)
+                        .style('text-anchor', 'end')
+                        .style('fill', 'grey')
+                        .text(x_label);
+                    var y_axis = this.g.append('g')
+                        .attr('class', 'y-axis')
+                        .attr('transform', "translate(" + _this.dimensions.margin.left + ",0)")
+                        .call(_this.chart.y_axis)
+                        .append('text')
+                        .attr('class', 'label')
+                        .attr('transform', 'rotate(-90)')
+                        .attr('y', 12)
+                        .attr('dy', '.71em')
+                        .style('text-anchor', 'end')
+                        .style('fill', 'grey')
+                        .text(y_label);
+                };
+                RawDataComponent.prototype.__populate = function () {
+                    // d3 namespace
+                    var _this = this;
+                    this.chart.lines = {};
+                    var color_i = 0;
+                    this.colors = [];
+                    var _loop_1 = function (name) {
+                        if (this_1.functions.hasOwnProperty(name) && !(name.toLowerCase() === 'date')) {
+                            var functions_1 = this_1.functions[name];
+                            var dataline = d3__WEBPACK_IMPORTED_MODULE_2__["line"]()
+                                // d3 namespace
+                                .x(function (d) { return _this.chart.x_scale(functions_1.x(d)); })
+                                .y(function (d) { return _this.chart.y_scale(functions_1.y(d)); });
+                            // data line generation
+                            this_1.chart.lines[name] = dataline;
+                            var stroke = COLOR_MAP[COLORS[this_1.random_sequence[color_i]]];
+                            color_i += 1;
+                            if (color_i == this_1.random_sequence.length)
+                                color_i = 0;
+                            this_1.g.append('path')
+                                // d3 namespace
+                                .data([_this.data])
+                                .attr('class', "line")
+                                // https://stackoverflow.com/questions/14765036/d3-line-chart-filling-at-arbitrary-line
+                                .style('fill', 'none')
+                                .style('stroke', stroke)
+                                .style('stroke-width', '2px')
+                                .attr('d', dataline);
+                            this_1.g.selectAll('.dot')
+                                .data(_this.data)
+                                .enter()
+                                .append('circle')
+                                .attr('r', 5)
+                                .attr('cx', function (d) { return _this.chart.x_scale(functions_1.x(d)); })
+                                .attr('cy', function (d) { return _this.chart.y_scale(functions_1.y(d)); })
+                                .attr('stroke', 'black')
+                                .attr('stroke-width', 1.5)
+                                .style('fill', 'white')
+                                .style('cursor', 'pointer')
+                                .on('click', function (d) {
+                                _this.tooltip_sustain = !_this.tooltip_sustain;
+                            })
+                                .on('mouseover', function (d) {
+                                _this.chart.tooltip.transition()
+                                    .duration(250)
+                                    .style('opacity', 0.9);
+                                _this.chart.tooltip.html("date: " + functions_1.x(d) + "<br>type: " + name + "<br>value: " + functions_1.y(d))
+                                    .style('left', (d3__WEBPACK_IMPORTED_MODULE_2__["event"].pageX + 12) + 'px')
+                                    .style('top', (d3__WEBPACK_IMPORTED_MODULE_2__["event"].pageY - 28) + 'px');
+                            })
+                                .on('mouseout', function (d) {
+                                if (!_this.tooltip_sustain) {
+                                    _this.chart.tooltip.transition()
+                                        .duration(500)
+                                        .style('opacity', 0);
+                                }
+                            });
+                            this_1.colors.push({ key: name, color: stroke });
+                        }
+                    };
+                    var this_1 = this;
+                    for (var name in this.functions) {
+                        _loop_1(name);
+                    }
+                };
+                // https://www.d3-graph-gallery.com/graph/custom_legend.html
+                RawDataComponent.prototype.__legend = function () {
+                    // d3 namespace
+                    var _this = this;
+                    var size = 20;
+                    this.svg.selectAll('mydots')
+                        .data(this.colors)
+                        .enter()
+                        .append('rect')
+                        .attr('x', _this.dimensions.width * 4 / 5)
+                        .attr('y', function (d, i) { return 100 + i * (size + 5); }) // 100 is where the first dot appears. 25 is the distance between dots
+                        .attr('width', size)
+                        .attr('height', size)
+                        .style('fill', function (d) { return d.color; });
+                    // Add one dot in the legend for each name.
+                    this.svg.selectAll('mylabels')
+                        .data(this.colors)
+                        .enter()
+                        .append('text')
+                        .attr('x', _this.dimensions.width * 4 / 5 + size * 1.2)
+                        .attr('y', function (d, i) { return 100 + i * (size + 5) + (size / 2); }) // 100 is where the first dot appears. 25 is the distance between dots
+                        .style('fill', function (d) { return d.color; })
+                        .text(function (d) { return d.key; })
+                        .attr('text-anchor', 'left')
+                        .style('alignment-baseline', 'middle');
+                };
+                return RawDataComponent;
+            }());
+            RawDataComponent.ctorParameters = function () { return [
+                { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
+            ]; };
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+            ], RawDataComponent.prototype, "data", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+            ], RawDataComponent.prototype, "functions", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('tooltip', { static: false })
+            ], RawDataComponent.prototype, "tooltip", void 0);
+            RawDataComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-raw-data',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./raw-data.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/raw-data/raw-data.component.html")).default,
+                    changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./raw-data.component.scss */ "./src/app/components/raw-data/raw-data.component.scss")).default]
+                })
+            ], RawDataComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/components/test/test.component.scss": 
+        /*!*****************************************************!*\
+          !*** ./src/app/components/test/test.component.scss ***!
+          \*****************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdGVzdC90ZXN0LmNvbXBvbmVudC5zY3NzIn0= */");
+            /***/ 
+        }),
+        /***/ "./src/app/components/test/test.component.ts": 
+        /*!***************************************************!*\
+          !*** ./src/app/components/test/test.component.ts ***!
+          \***************************************************/
+        /*! exports provided: TestComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestComponent", function () { return TestComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/api.service */ "./src/app/services/api.service.ts");
+            // const DATA = [
+            //   { "date": "10-05-2012", "close": 68.55, "open": 74.55 },
+            //   { "date": "09-05-2012", "close": 74.55, "open": 69.55 },
+            //   { "date": "08-05-2012", "close": 69.55, "open": 62.55 },
+            //   { "date": "07-05-2012", "close": 62.55, "open": 56.55 },
+            //   { "date": "06-05-2012", "close": 56.55, "open": 59.55 },
+            //   { "date": "05-05-2012", "close": 59.86, "open": 65.86 },
+            //   { "date": "04-05-2012", "close": 62.62, "open": 65.62 },
+            //   { "date": "03-05-2012", "close": 64.48, "open": 60.48 },
+            //   { "date": "02-05-2012", "close": 60.98, "open": 55.98 },
+            //   { "date": "01-05-2012", "close": 58.13, "open": 53.13 },
+            //   { "date": "30-04-2012", "close": 68.55, "open": 74.55 },
+            //   { "date": "29-04-2012", "close": 74.55, "open": 69.55 },
+            //   { "date": "28-04-2012", "close": 69.55, "open": 62.55 },
+            //   { "date": "27-04-2012", "close": 62.55, "open": 56.55 },
+            //   { "date": "26-04-2012", "close": 56.55, "open": 59.55 },
+            //   { "date": "25-04-2012", "close": 59.86, "open": 65.86 },
+            //   { "date": "24-04-2012", "close": 62.62, "open": 65.62 },
+            //   { "date": "23-04-2012", "close": 64.48, "open": 60.48 },
+            //   { "date": "22-04-2012", "close": 60.98, "open": 55.98 },
+            //   { "date": "21-04-2012", "close": 58.13, "open": 53.13 }
+            // ];
+            var TestComponent = /** @class */ (function () {
+                function TestComponent(api) {
+                    this.api = api;
+                }
+                TestComponent.prototype.ngOnInit = function () {
+                    var _this_1 = this;
+                    var data = [];
+                    this.functions = {};
+                    this.keys = [];
+                    this.api.get('raw_data').subscribe(function (raw_data) {
+                        console.log(raw_data);
+                        Object.keys(raw_data.data[0].raw).forEach(function (element) {
+                            _this_1.keys.push(element);
+                        });
+                        for (var _i = 0, _a = raw_data.data; _i < _a.length; _i++) {
+                            var data_1 = _a[_i];
+                            var _loop_2 = function (key) {
+                                if (data_1['raw'].hasOwnProperty(key)) {
+                                    if (!_this_1.functions.hasOwnProperty(key)) {
+                                        // let code = `(d) => { return d['raw']['${key}'] }`;
+                                        _this_1.functions[key] = {
+                                            x: function (d) { return d['date_created']; },
+                                            y: function (d) { return +d['raw'][key]; },
+                                        };
+                                    }
+                                }
+                            };
+                            for (var key in data_1['raw']) {
+                                _loop_2(key);
+                            }
+                        }
+                        var _loop_3 = function (d) {
+                            setTimeout(function () {
+                                d['date_created'] = new Date(d['date_created']);
+                                data.push(d);
+                                _this_1.data = data.slice(); // copies the array to force change detect
+                            }, 1000);
+                        };
+                        for (var _b = 0, _c = raw_data.data; _b < _c.length; _b++) {
+                            var d = _c[_b];
+                            _loop_3(d);
+                        }
+                        console.log(_this_1.keys);
+                        console.log(_this_1.functions);
+                        console.log(_this_1.data);
+                    }, function (err) {
+                        console.error(err);
+                    });
+                };
+                return TestComponent;
+            }());
+            TestComponent.ctorParameters = function () { return [
+                { type: src_app_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] }
+            ]; };
+            TestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'app-test',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./test.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/test/test.component.html")).default,
+                    styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./test.component.scss */ "./src/app/components/test/test.component.scss")).default]
+                })
+            ], TestComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/library/arrays.ts": 
+        /*!***********************************!*\
+          !*** ./src/app/library/arrays.ts ***!
+          \***********************************/
+        /*! exports provided: purge_key, purge_value */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "purge_key", function () { return purge_key; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "purge_value", function () { return purge_value; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            function purge_key(array, key) {
+                for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
+                    var el = array_1[_i];
+                    if (key in el) {
+                        delete el[key];
+                    }
+                }
+                return array;
+            }
+            function purge_value(array, key, value) {
+                for (var _i = 0, array_2 = array; _i < array_2.length; _i++) {
+                    var el = array_2[_i];
+                    if (key in el && el[key] === value) {
+                        delete el[key];
+                    }
+                }
+                return array;
+            }
+            /***/ 
+        }),
+        /***/ "./src/app/library/index.ts": 
+        /*!**********************************!*\
+          !*** ./src/app/library/index.ts ***!
+          \**********************************/
+        /*! exports provided: Strings, Types, Objects, Arrays, Time */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _strings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./strings */ "./src/app/library/strings.ts");
+            /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Strings", function () { return _strings__WEBPACK_IMPORTED_MODULE_1__; });
+            /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./types */ "./src/app/library/types.ts");
+            /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Types", function () { return _types__WEBPACK_IMPORTED_MODULE_2__; });
+            /* harmony import */ var _objects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./objects */ "./src/app/library/objects.ts");
+            /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Objects", function () { return _objects__WEBPACK_IMPORTED_MODULE_3__; });
+            /* harmony import */ var _arrays__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./arrays */ "./src/app/library/arrays.ts");
+            /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Arrays", function () { return _arrays__WEBPACK_IMPORTED_MODULE_4__; });
+            /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./time */ "./src/app/library/time.ts");
+            /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "Time", function () { return _time__WEBPACK_IMPORTED_MODULE_5__; });
+            /***/ 
+        }),
+        /***/ "./src/app/library/objects.ts": 
+        /*!************************************!*\
+          !*** ./src/app/library/objects.ts ***!
+          \************************************/
+        /*! exports provided: clone */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clone", function () { return clone; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            function clone(o) {
+                if (typeof o === 'object') {
+                    return JSON.parse(JSON.stringify(o));
+                }
+                else {
+                    return o;
+                }
+            }
+            /***/ 
+        }),
+        /***/ "./src/app/library/strings.ts": 
+        /*!************************************!*\
+          !*** ./src/app/library/strings.ts ***!
+          \************************************/
+        /*! exports provided: capitalize, random, url_attach_params, extract_params, remove_params */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "capitalize", function () { return capitalize; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "random", function () { return random; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "url_attach_params", function () { return url_attach_params; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extract_params", function () { return extract_params; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "remove_params", function () { return remove_params; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            function capitalize(str) {
+                return str.charAt(0).toUpperCase() + str.slice(1);
+            }
+            var sample_space = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            function random(count) {
+                var text = '';
+                for (var i = 0; i < count; i++)
+                    text += sample_space.charAt(Math.floor(Math.random() * sample_space.length));
+                return text;
+            }
+            function url_attach_params(url, params) {
+                if (Object.keys(params).length > 0) {
+                    var param_string = [];
+                    for (var key in params) {
+                        if (params.hasOwnProperty(key)) {
+                            var value = params[key];
+                            if (Array.isArray(value)) {
+                                for (var _i = 0, value_1 = value; _i < value_1.length; _i++) {
+                                    var el = value_1[_i];
+                                    param_string.push(key + "=" + el);
+                                }
+                            }
+                            else {
+                                param_string.push(key + "=" + value);
+                            }
+                        }
+                    }
+                    if (param_string.length > 0) {
+                        url = url + "?" + param_string.join('&');
+                    }
+                }
+                return url;
+            }
+            function extract_params(url) {
+                var param_map = {};
+                var url_split = url.split('?');
+                if (url_split.length == 2) {
+                    var params = url_split[1];
+                    var parameters = params.split('&');
+                    for (var _i = 0, parameters_1 = parameters; _i < parameters_1.length; _i++) {
+                        var parameter = parameters_1[_i];
+                        var pair = parameter.split('=');
+                        if (!param_map.hasOwnProperty(pair[0])) {
+                            param_map[pair[0]] = [];
+                        }
+                        param_map[pair[0]].push(pair[1]);
+                    }
+                }
+                return param_map;
+            }
+            function remove_params(url) {
+                var url_split = url.split('?');
+                return url_split[0];
+            }
+            /***/ 
+        }),
+        /***/ "./src/app/library/time.ts": 
+        /*!*********************************!*\
+          !*** ./src/app/library/time.ts ***!
+          \*********************************/
+        /*! exports provided: date_to_filename */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "date_to_filename", function () { return date_to_filename; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            var second = 1000;
+            var minute = second * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+            var week = day * 7;
+            var month = day * 30;
+            var year = second * 3.154e+7;
+            function date_to_filename(date) {
+                if (date === void 0) { date = null; }
+                if (!date) {
+                    date = new Date();
+                }
+                var new_value = null;
+                var years = date.getFullYear();
+                var months = date.getMonth() + 1;
+                if (months === 0 || (months > 0 && months % 10 > 0))
+                    months = "0" + months;
+                var days = date.getDate();
+                if (days === 0 || (days > 0 && days % 10 > 0))
+                    days = "0" + days;
+                var hours = date.getHours();
+                if (hours < 10)
+                    hours = "0" + hours;
+                var minutes = date.getMinutes();
+                if (minutes < 10)
+                    minutes = "0" + minutes;
+                var seconds = date.getSeconds();
+                if (seconds < 10)
+                    seconds = "0" + seconds;
+                new_value = "" + years + months + days + "-" + hours + minutes + seconds;
+                return new_value;
+            }
+            /***/ 
+        }),
+        /***/ "./src/app/library/types.ts": 
+        /*!**********************************!*\
+          !*** ./src/app/library/types.ts ***!
+          \**********************************/
+        /*! exports provided: type_of, normalize */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "type_of", function () { return type_of; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalize", function () { return normalize; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            function type_of(a) {
+                var prototype = typeof a;
+                if (prototype !== 'object') {
+                    return prototype;
+                }
+                if (Array.isArray(a)) {
+                    return '[]';
+                }
+                else {
+                    return '{}';
+                }
+            }
+            function normalize(a) {
+                if (type_of(a) === '[]') {
+                    if (type_of(a[0]) === '{}' && 'value' in a[0] && 'type' in a[0] && 'key' in a[0]) {
+                        var val = {};
+                        for (var _i = 0, a_1 = a; _i < a_1.length; _i++) {
+                            var iterator = a_1[_i];
+                            val[iterator.key] = normalize(iterator.value);
+                        }
+                        a = val;
+                    }
+                    else if (type_of(a[0]) === '{}' && 'value' in a[0] && 'type' in a[0]) {
+                        var val = [];
+                        for (var _a = 0, a_2 = a; _a < a_2.length; _a++) {
+                            var iterator = a_2[_a];
+                            val.push(normalize(iterator.value));
+                        }
+                        a = val;
+                    }
+                }
+                else if (type_of(a) === '{}') {
+                    for (var key in a) {
+                        if (a.hasOwnProperty(key)) {
+                            var element = a[key];
+                            a[key] = normalize(element);
+                        }
+                    }
+                }
+                return a;
+            }
+            /***/ 
+        }),
+        /***/ "./src/app/services/api.service.ts": 
+        /*!*****************************************!*\
+          !*** ./src/app/services/api.service.ts ***!
+          \*****************************************/
+        /*! exports provided: ApiService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApiService", function () { return ApiService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+            /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+            /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+            /* harmony import */ var src_app_library__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/library */ "./src/app/library/index.ts");
+            var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' });
+            var ApiService = /** @class */ (function () {
+                function ApiService(http) {
+                    this.http = http;
+                    if (!(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production)) {
+                        console.log(this.constructor.name, 'started', src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].api);
+                    }
+                }
+                ApiService.prototype.post = function (resource, body) {
+                    var _this_1 = this;
+                    var __function__ = "post(resource: " + resource + ", body: " + body + ");";
+                    var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].api + "/" + resource;
+                    var response = this.http.post(url, body, {
+                        withCredentials: true,
+                    }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (x) {
+                        if (!(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production)) {
+                            console.log(_this_1.constructor.name, __function__, 'url', url, x);
+                        }
+                        return x;
+                    }));
+                    return response;
+                };
+                ApiService.prototype.get = function (resource, id, params) {
+                    var _this_1 = this;
+                    if (id === void 0) { id = null; }
+                    if (params === void 0) { params = {}; }
+                    var __function__ = "get(resource: " + resource + ", id: " + id + ", params: " + params + ");";
+                    var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].api + "/" + resource;
+                    if (id != null) {
+                        url = url + "/" + id;
+                    }
+                    url = src_app_library__WEBPACK_IMPORTED_MODULE_5__["Strings"].url_attach_params(url, params);
+                    var response = this.http.get(url, {
+                        headers: headers,
+                        reportProgress: true,
+                        observe: "body",
+                        withCredentials: true,
+                    }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (x) {
+                        if (!(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production)) {
+                            console.log(_this_1.constructor.name, __function__, 'url', url, x);
+                        }
+                        return x;
+                    }));
+                    return response;
+                };
+                ApiService.prototype.put = function (resource, id, body) {
+                    var _this_1 = this;
+                    var __function__ = "put(resource: " + resource + ", id: " + id + ", body: " + body + ");";
+                    var url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].api + "/" + resource + "/" + id;
+                    var response = this.http.put(url, body, {
+                        headers: headers,
+                        reportProgress: true,
+                        observe: "body",
+                        withCredentials: true,
+                    }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (x) {
+                        if (!(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production)) {
+                            console.log(_this_1.constructor.name, __function__, 'url', url, x);
+                        }
+                        return x;
+                    }));
+                    return response;
+                };
+                ApiService.prototype.delete = function (resource, id, params) {
+                    var _this_1 = this;
+                    if (id === void 0) { id = null; }
+                    if (params === void 0) { params = {}; }
+                    var __function__ = "delete(resource: " + resource + ", id: " + id + ", params: " + params + ");";
+                    var url = '';
+                    if (id !== null) {
+                        url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].api + "/" + resource + "/" + id;
+                    }
+                    else {
+                        url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].api + "/" + resource;
+                    }
+                    url = src_app_library__WEBPACK_IMPORTED_MODULE_5__["Strings"].url_attach_params(url, params);
+                    var response = this.http.delete(url, {
+                        headers: headers,
+                        reportProgress: true,
+                        observe: "body",
+                        withCredentials: true,
+                    }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (x) {
+                        if (!(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production)) {
+                            console.log(_this_1.constructor.name, __function__, 'url', url, x);
+                        }
+                        return x;
+                    }));
+                    return response;
+                };
+                return ApiService;
+            }());
+            ApiService.ctorParameters = function () { return [
+                { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+            ]; };
+            ApiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], ApiService);
+            /***/ 
+        }),
+        /***/ "./src/environments/environment.ts": 
+        /*!*****************************************!*\
+          !*** ./src/environments/environment.ts ***!
+          \*****************************************/
+        /*! exports provided: environment */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function () { return environment; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            // This file can be replaced during build by using the `fileReplacements` array.
+            // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+            // The list of file replacements can be found in `angular.json`.
+            var environment = {
+                production: false,
+                api: "http://localhost:6969/api/v0"
+            };
+            /*
+             * For easier debugging in development mode, you can import the following file
+             * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+             *
+             * This import should be commented out in production mode because it will have a negative impact
+             * on performance if an error is thrown.
+             */
+            // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+            /***/ 
+        }),
+        /***/ "./src/main.ts": 
+        /*!*********************!*\
+          !*** ./src/main.ts ***!
+          \*********************/
+        /*! no exports provided */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+            /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+            /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+            if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+            }
+            Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
+                .catch(function (err) { return console.error(err); });
+            /***/ 
+        }),
+        /***/ 0: 
+        /*!***************************!*\
+          !*** multi ./src/main.ts ***!
+          \***************************/
+        /*! no static exports found */
+        /***/ (function (module, exports, __webpack_require__) {
+            module.exports = __webpack_require__(/*! C:\code\apps\suite\self\swarm\website\src\main.ts */ "./src/main.ts");
+            /***/ 
+        })
+    }, [[0, "runtime", "vendor"]]]);
+//# sourceMappingURL=main-es2015.js.map
+//# sourceMappingURL=main-es5.js.map
+//# sourceMappingURL=main-es5.js.map
