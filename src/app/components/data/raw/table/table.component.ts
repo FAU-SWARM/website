@@ -37,7 +37,7 @@ export class TableComponent implements OnInit {
   generate_rows() {
     this.rows = [];
     let full_dataset = [];
-    this.columns = ['device'];
+    this.columns = ['device', 'project', 'date'];
     for (const device_id in this.db.raw_data) {
       if (this.db.raw_data.hasOwnProperty(device_id)) {
         let dataset = this.db.raw_data[device_id];
@@ -57,6 +57,7 @@ export class TableComponent implements OnInit {
     for (const row of full_dataset) {
       let new_row = {
         device: this.db.device[row['device']]['name'],
+        project: this.db.device[row['device']]['meta_data']['project'],
         date: row['date_created'],
       }
       for (const key in this.db.device[row['device']]['meta_data']) {
