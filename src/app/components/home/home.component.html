@@ -1,0 +1,163 @@
+<h1>Project: SWARM (Sensory Web Analysis and Regression Mechanism)</h1>
+<h2>
+    Team Members:
+</h2>
+<ul>
+    <li>Chris Carl</li>
+    <li>Jonathan Ortiz Collazo (Lead)</li>
+    <li>Eric de Souza Piasentin</li>
+
+</ul>
+<h2>Description:</h2>
+<p>SWARM is a prototype project that aims to combine sensory data obtained from a swarm of IOT devices by utilizing
+    client-server architecture and the cloud. These IOT devices collect sensory data like temperature, time, windspeed,
+    humidity, and luminosity and transmit the data to a full-stack application which stores, analyzes and displays this
+    data. The full stack application will be composed of a consumable API, a storage database, and publicly accessible
+    website that provides visualizations.
+</p>
+<h2>Motivation:</h2>
+<p>Hurricane Dorian recently shocked the US with its potency and its destructive capabilities, leaving a strong
+    impression
+    on the team. We believe that collecting atmospheric data, performing data science techniques, and displaying
+    actionable
+    data are worthwhile endeavors. Sensory equipment can be acquired cheaply, and hosting software can be free if
+    managed.
+</p>
+<h2>Proposal:
+</h2>
+<p>Chris, Jonathan, and Eric will divide their efforts among hardware and software requirements to complete this
+    project.
+    There is a safe target and stretch target of capabilities and implementation, both of which are attainable in a
+    semester. In both cases the work will be divided such that Chris focuses on the web/server-related components, Eric
+    will
+    be focused on the hardware/sensor-related components, and Jonathan will be working to reach the stretch target in
+    areas
+    like RF communication and data science. Each effort will be tracked, triaged, and tested throughout the semester.
+</p>
+<h2>Safe target:</h2>
+<ul>
+    <li>API
+        <ul>
+            <li>deployed on AWS/Azure or FAU lamp.cse.fau.edu)</li>
+            <li>private to those who know the link</li>
+            <li>unauthenticated</li>
+        </ul>
+    </li>
+    <li>Database
+
+    </li>
+    <li>Website
+        <ul>
+            <li>deployed on AWS/Azure or FAU lamp.cse.fau.edu</li>
+            <li>follows SDA with dev, stage, prod deployments</li>
+            <li>non-mobile optimized</li>
+            <li>unauthenticated</li>
+            <li></li>
+        </ul>
+    </li>
+    <li>IOT Device
+        <ul>
+            <li>Raspberry Pi with sensors provided by FAU lab stores</li>
+            <li>single device</li>
+            <li>Wi-Fi enabled</li>
+            <li>unauthenticated</li>
+        </ul>
+    </li>
+</ul>
+<h2>Stretch target:</h2>
+<ul>
+    <li>API
+        <ul>
+            <li>deployed on AWS/Azure or FAU lamp.cse.fau.edu</li>
+            <li>DNS registered and publicly accessible</li>
+            <li>authenticated</li>
+        </ul>
+    </li>
+    <li>Data Science Service
+        <ul>
+            <li>deployed on AWS/Azure or FAU lamp.cse.fau.edu</li>
+            <li>data science / ml techniques performed on data like classification</li>
+        </ul>
+    </li>
+    <li>Database
+        <ul>
+            <li>deployed on AWS/Azure or FAU lamp.cse.fau.edu</li>
+            <li>replicated across two or more nodes</li>
+            <li>authenticated</li>
+        </ul>
+    </li>
+    <li>Website
+        <ul>
+            <li>deployed on AWS/Azure or FAU lamp.cse.fau.edu</li>
+            <li>DNS registered and publicly accessible</li>
+            <li>mobile optimized</li>
+            <li>authenticated</li>
+        </ul>
+    </li>
+    <li>Mobile
+        <ul>
+            <li>Android application to display the website</li>
+            <li>authenticated</li>
+        </ul>
+    </li>
+    <li>IOT Device Master
+        <ul>
+            <li>Raspberry Pi or low power microcomputer sourced externally from FAU</li>
+            <li>Wi-Fi enabled</li>
+            <li>authenticated / encrypted</li>
+        </ul>
+    </li>
+    <li>IOT Device Slave
+        <ul>
+            <li>multiple device slaves</li>
+            <li>RF communication enabled with Master</li>
+            <li>authenticated / encrypted</li>
+        </ul>
+    </li>
+    <li>Written Publication
+        <ul>
+            <li>academic grade paper</li>
+        </ul>
+    </li>
+</ul>
+
+
+<h2>Related Work:</h2>
+<ul>
+    <li>
+        <h4>ISENSE Intelligent River Project</h4>
+        <ul>
+            <li>FAU has a research institute who has worked on a project that collects environmental data in
+                collaboration with
+                Clemson University. The sensors themselves are the focal point and represent the bulk of progressing the
+                state of the
+                art while the data analysis and visualization are on the backburner.
+                (http://www.ceecs.fau.edu/news/1502_hallstrom.php)</li>
+        </ul>
+    </li>
+    <li>
+        <h4>National Weather Service Stations</h4>
+        <ul>
+            <li>NWS and NOAA are professional government agencies who are responsible for monitoring atmospheric
+                developments and
+                providing accurate information to the public in times of natural disasters.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>IOT Edge Computing</h4>
+        <ul>
+            <li>The IOT movement has been gaining traction as well as the idea of “edge nodes” who either perform
+                rudimentary analysis
+                or are solely responsible for collection.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Home Automation</h4>
+        <ul>
+            <li>Companies like Samsung and Google have begun developing consumer-ready products in the realm of home
+                automation,
+                utilizing low-powered devices in the consumer space backed by industry grade web-hosted applications.
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,28 +1,27 @@
 <div class="row">
     <div class="col">
         <h2>Data</h2>
-        <p>Here you can chose between viewing data with graphical visualizations or by simply using the tabular view
-            like data scientists of old would use.</p>
+        <p>Here you can chose between viewing data through an intelligent lens or a raw lens.</p>
     </div>
 </div>
 <div class="row">
     <div class="col mx-auto">
         <div class="card">
-            <img src="assets/d3.jpg" class="card-img-top" alt="d3">
+            <img src="assets/raw.jpg" class="card-img-top" alt="raw">
             <div class="card-body">
-                <h5 class="card-title">Graph</h5>
-                <p class="card-text">View your data in splendid graphical views.</p>
-                <a class="btn btn-primary" [routerLink]="['/data/raw/graph']">Go to Graph View</a>
+                <h5 class="card-title">Raw</h5>
+                <p class="card-text">View your data exactly as captured in the database.</p>
+                <a class="btn btn-primary" [routerLink]="['/data/raw']">Go to Raw View</a>
             </div>
         </div>
     </div>
     <div class="col mx-auto">
             <div class="card">
-                <img src="assets/tabular.png" class="card-img-top" alt="tabular">
+                <img src="assets/intelligent.jpg" class="card-img-top" alt="intelligent">
                 <div class="card-body">
-                    <h5 class="card-title">Table</h5>
-                    <p class="card-text">View your data in splendid tabular views.</p>
-                    <a class="btn btn-primary" [routerLink]="['/data/raw/table']">Go to Table View</a>
+                    <h5 class="card-title">Intelligent</h5>
+                    <p class="card-text">View your data through the lens of an interpreting model.</p>
+                    <a class="btn btn-primary" [routerLink]="['/data/intelligent']">Go to Intelligent View</a>
                 </div>
             </div>
     </div>
