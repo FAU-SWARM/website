@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+        <h2>Device</h2>
+        <p>Devices are listed here to give users an idea of the scope of the fleet.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 mb-4" *ngFor="let item of this.db.device | keyvalue">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{item.value.name}}</h5>
+                <p class="card-text">
+                    <small class="text-muted">created: {{item.value.date_created | date : 'long'}}</small><br>
+                    <small class="text-muted">modified: {{item.value.date_modified | date : 'long'}}</small>
+                </p>
+                <p class="card-text">{{item.value.meta_data | json }}</p>
+            </div>
+        </div>
+    </div>
+</div>

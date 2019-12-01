@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col">
+        <h2>Project</h2>
+        <p>Projects are listed here to allow users to hop over to their respective websites if they exist.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4 mb-4" *ngFor="let item of this.db.project | keyvalue">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{item.value.name}}</h5>
+                <p class="card-text">
+                    <small class="text-muted">created: {{item.value.date_created | date : 'long'}}</small><br>
+                    <small class="text-muted">modified: {{item.value.date_modified | date : 'long'}}</small>
+                </p>
+                <p class="card-text">{{item.value.description ? item.value.description : 'no description' }}</p>
+                <img src="{{item.value.img}}" alt="" class="img-responsive">
+                <a href="{{item.value.link}}" class="btn btn-primary">Go to {{item.value.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<!-- date selection -->
+<div class="form-inline">
+    <div class="form-group">
+        <div class="input-group">
+            <!-- project selection -->
+            <ng-select placeholder="Select projects:" [items]="project"
+                [multiple]="true" bindLabel="name" bindValue="_id" [closeOnSelect]="false"
+                [disabled]="project.length === 0" [(ngModel)]="selected_projects" (change)="change_selected_projects()">
+                <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+                </ng-template>
+            </ng-select>
+        </div>
+    </div>
+    <div class="form-group ml-2">
+        <div class="input-group">
+            <!-- device selection -->
+            <ng-select placeholder="Select devices:" [items]="device"
+                [multiple]="true" bindLabel="name" bindValue="_id" groupBy="project" [selectableGroup]="true"
+                [closeOnSelect]="false" [disabled]="device.length === 0" [(ngModel)]="selected_devices"
+                (change)="change_selected_devices()">
+                <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.project}}
+                </ng-template>
+                <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+                </ng-template>
+            </ng-select>
+        </div>
+    </div>
+</div>
+<form class="form-inline">
+    <div class="form-group hidden">
+        <!-- calendar big dialog -->
+        <div class="input-group">
+            <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
+                [autoClose]="'outside'" (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                outsideDays="hidden" [startDate]="fromDate">
+            <ng-template #t let-date let-focused="focused">
+                <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                    {{ date.day }}
+                </span>
+            </ng-template>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <!-- calendar from -->
+            <input #dpFromDate class="form-control" placeholder="yyyy-mm-dd" name="dpFromDate"
+                [value]="formatter.format(fromDate)" (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="datepicker.toggle()" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-calendar">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group ml-2">
+        <div class="input-group">
+            <!-- calendar to -->
+            <input #dpToDate class="form-control" placeholder="yyyy-mm-dd" name="dpToDate"
+                [value]="formatter.format(toDate)" (input)="toDate = validateInput(toDate, dpToDate.value)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="datepicker.toggle()" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-calendar">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

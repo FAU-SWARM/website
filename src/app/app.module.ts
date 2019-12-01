@@ -3,29 +3,31 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+// 3rd party
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
+
+
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TestComponent } from './components/test/test.component';
-import { ApiService } from './services/api.service';
-import { HomeComponent } from './components/home/home.component';
-import { RawDataComponent } from './components/raw-data/raw-data.component';
+import * as Component from 'src/app/components';
+import * as Service from 'src/app/services';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TestComponent,
-    HomeComponent,
-    RawDataComponent,
+    Object.keys(Component).map((key) => { return Component[key] }),
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+
+    // 3rd party
+    NgbModule, NgSelectModule,
   ],
   providers: [
-    ApiService,
+    Object.keys(Service).map((key) => { return Service[key] }),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [Component.AppComponent]
 })
 export class AppModule { }

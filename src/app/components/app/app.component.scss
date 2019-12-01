@@ -1,0 +1,19 @@
+.nobull {
+    list-style-type: none;
+}
+
+.indent-one {
+    padding-left: 1em; /* Set the distance from the list edge to 1x the font size */
+    list-style-position: outside;
+}
+
+.indent-two {
+    padding-left: 2em;
+    list-style-position: outside;
+}
+
+.indent-three {
+    padding-left: 3em;
+    list-style-position: outside;
+}
+

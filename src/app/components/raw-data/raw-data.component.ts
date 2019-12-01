@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, SimpleChanges, Component, ElementRef, Input, OnInit, OnChanges, AfterViewInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import * as d3 from 'd3';
 
 
@@ -87,6 +88,8 @@ export interface D3Chart {
 export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() data: any[];
   @Input() functions: ExWhyFunctions;
+  private device_data: { [device_id: string]: any[] };
+  public devices: { [device_id: string]: any };
 
   private element: any = null;
   @ViewChild('tooltip', { static: false }) private tooltip: any = null;
@@ -102,7 +105,7 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
   private view_initialized = false;
   private tooltip_sustain = false;
 
-  constructor(private _element: ElementRef) { }
+  constructor(private _element: ElementRef, private api: ApiService) { }
 
   ngOnInit() {
     this.dimensions = {
@@ -129,8 +132,21 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
     for (let i = 0; i < original_length; i++) {
       let victim = random(original_sequence.length);
       this.random_sequence.push(original_sequence[victim]);
-      original_sequence.splice(victim);
+      original_sequence.splice(victim, 1);
     }
+
+    this.api.get('device').subscribe(
+      (api_response) => {
+        this.devices = {};
+        for (const data of api_response['data']) {
+          this.devices[data['_id']] = data;
+        }
+        console.log('this.devices', this.devices);
+      },
+      (err) => {
+        console.error(err);
+      },
+    );
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -152,6 +168,7 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
   private create_chart() {
     this.__setup();
     this.__build();
+    this.__transform();
     this.__populate();
     this.__draw_axes('time', 'everything');
     this.__legend();
@@ -173,9 +190,6 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
       range: [],
     };
 
-
-    let all_x = []
-    let all_y = []
     for (const d of this.data) {
       this.domain_range.domain.push(d['date_created'])
     }
@@ -224,6 +238,17 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
     this.chart.tooltip = d3.select(this.tooltip.nativeElement);
   }
 
+  private __transform() {
+    // takes any[] -> {[device_id: string]: any[]}
+    this.device_data = {};
+    this.data.forEach(datum => {
+      if (!this.device_data.hasOwnProperty(datum['device'])) {
+        this.device_data[datum['device']] = [];
+      }
+      this.device_data[datum['device']].push(datum);
+    });
+  }
+
   private __draw_axes(x_label: string, y_label: string) {
     // d3 namespace
     let _this = this;
@@ -260,62 +285,68 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
 
     let color_i = 0;
     this.colors = [];
-    for (const name in this.functions) {
-      if (this.functions.hasOwnProperty(name) && !(name.toLowerCase() === 'date')) {
-        const functions = this.functions[name];
+    for (const device_id in this.devices) {
+      if (this.device_data.hasOwnProperty(device_id)) {
+        const data = this.device_data[device_id];
 
-        let dataline = d3.line()
-          // d3 namespace
-          .x((d) => { return _this.chart.x_scale(functions.x(d)); })
-          .y((d) => { return _this.chart.y_scale(functions.y(d)); });
+        for (const func in this.functions) {
+          if (this.functions.hasOwnProperty(func) && !(func.toLowerCase() === 'date')) {
+            const functions = this.functions[func];
 
-        // data line generation
-        this.chart.lines[name] = dataline;
-        let stroke = COLOR_MAP[COLORS[this.random_sequence[color_i]]];
-        color_i += 1;
-        if (color_i == this.random_sequence.length)
-          color_i = 0;
-        this.g.append('path')
-          // d3 namespace
-          .data([_this.data])
-          .attr('class', `line`)
-          // https://stackoverflow.com/questions/14765036/d3-line-chart-filling-at-arbitrary-line
-          .style('fill', 'none')
-          .style('stroke', stroke)
-          .style('stroke-width', '2px')
-          .attr('d', dataline);
+            let dataline = d3.line()
+              // d3 namespace
+              .x((d) => { return _this.chart.x_scale(functions.x(d)); })
+              .y((d) => { return _this.chart.y_scale(functions.y(d)); });
 
-        this.g.selectAll('.dot')
-          .data(_this.data)
-          .enter()
-          .append('circle')
-          .attr('r', 5)
-          .attr('cx', (d) => { return _this.chart.x_scale(functions.x(d)); })
-          .attr('cy', (d) => { return _this.chart.y_scale(functions.y(d)); })
-          .attr('stroke', 'black')
-          .attr('stroke-width', 1.5)
-          .style('fill', 'white')
-          .style('cursor', 'pointer')
-          .on('click', (d) => {
-            _this.tooltip_sustain = !_this.tooltip_sustain;
-          })
-          .on('mouseover', (d) => {
-            _this.chart.tooltip.transition()
-              .duration(250)
-              .style('opacity', 0.9);
-            _this.chart.tooltip.html(`date: ${functions.x(d)}<br>type: ${name}<br>value: ${functions.y(d)}`)
-              .style('left', (d3.event.pageX + 12) + 'px')
-              .style('top', (d3.event.pageY - 28) + 'px');
-          })
-          .on('mouseout', (d) => {
-            if (!_this.tooltip_sustain) {
-              _this.chart.tooltip.transition()
-                .duration(500)
-                .style('opacity', 0);
-            }
-          });
+            // data line generation
+            this.chart.lines[func] = dataline;
+            let stroke = COLOR_MAP[COLORS[this.random_sequence[color_i]]];
+            color_i += 1;
+            if (color_i == this.random_sequence.length)
+              color_i = 0;
+            this.g.append('path')
+              // d3 namespace
+              .data([data])
+              .attr('class', `line`)
+              // https://stackoverflow.com/questions/14765036/d3-line-chart-filling-at-arbitrary-line
+              .style('fill', 'none')
+              .style('stroke', stroke)
+              .style('stroke-width', '2px')
+              .attr('d', dataline);
 
-        this.colors.push({ key: name, color: stroke });
+            this.g.selectAll('.dot')
+              .data(data)
+              .enter()
+              .append('circle')
+              .attr('r', 5)
+              .attr('cx', (d) => { return _this.chart.x_scale(functions.x(d)); })
+              .attr('cy', (d) => { return _this.chart.y_scale(functions.y(d)); })
+              .attr('stroke', 'black')
+              .attr('stroke-width', 1.5)
+              .style('fill', 'white')
+              .style('cursor', 'pointer')
+              .on('click', (d) => {
+                _this.tooltip_sustain = !_this.tooltip_sustain;
+              })
+              .on('mouseover', (d) => {
+                _this.chart.tooltip.transition()
+                  .duration(250)
+                  .style('opacity', 0.9);
+                _this.chart.tooltip.html(`date: ${functions.x(d)}<br>type: ${func}<br>value: ${functions.y(d)}<br>device: ${this.devices[device_id]['name']}`)
+                  .style('left', (d3.event.pageX + 12) + 'px')
+                  .style('top', (d3.event.pageY - 28) + 'px');
+              })
+              .on('mouseout', (d) => {
+                if (!_this.tooltip_sustain) {
+                  _this.chart.tooltip.transition()
+                    .duration(500)
+                    .style('opacity', 0);
+                }
+              });
+
+            this.colors.push({ key: `${this.devices[device_id]['name']} ${func}`, color: stroke });
+          }
+        }
       }
     }
   }
@@ -329,7 +360,7 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
       .data(this.colors)
       .enter()
       .append('rect')
-      .attr('x', _this.dimensions.width * 4 / 5)
+      .attr('x', _this.dimensions.width * 3 / 5)
       .attr('y', function (d, i) { return 100 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
       .attr('width', size)
       .attr('height', size)
@@ -340,7 +371,7 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
       .data(this.colors)
       .enter()
       .append('text')
-      .attr('x', _this.dimensions.width * 4 / 5 + size * 1.2)
+      .attr('x', _this.dimensions.width * 3 / 5 + size * 1.2)
       .attr('y', (d, i) => { return 100 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
       .style('fill', (d) => { return d.color })
       .text((d) => { return d.key })
