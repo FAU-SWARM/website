@@ -1,10 +1,15 @@
-<div class="row">
-    <div class="col">
-        <h2>Graph</h2>
-    </div>
+<div class="col">
+    <h2>Graph</h2>
+    <p class="text-muted">Instructions: Please use the filter knobs to adjust what sort of data you want to see. By
+        default everything is displayed. In order to get the latest data, please refresh in the upper right-hand corner.
+        <span style="color: transparent;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi enim voluptatem
+            repellat doloribus consectetur, distinctio non voluptas voluptatum. Exercitationem aliquam beatae ad culpa
+            quae debitis reiciendis animi deserunt quia officiis?</span>
+    </p>
 </div>
-<div class="row">
-    <div class="col">
-        <app-utility-filter></app-utility-filter>
-    </div>
+<div class="col">
+    <app-utility-filter></app-utility-filter>
+</div>
+<div class="col-md-12">
+    <app-utility-graph [data]="data" [functions]="functions" [columns]="columns"></app-utility-graph>
 </div>

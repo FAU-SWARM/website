@@ -27,7 +27,19 @@ export class ApiObject {
 
 
 export class ApiData {
+  metadata: {
+    project: {
+      keys: string[];
+    };
+    device: {
+      keys: string[];
+    };
+    raw_data: {
+      keys: string[];
+    };
+  }
   arrays: {
+    raw_data: ApiObject[];
     project: ApiObject[];
     device: ApiObject[];
     user: ApiObject[];
@@ -44,7 +56,8 @@ export class ApiData {
   };
 
   constructor() {
-    this.arrays = { project: [], device: [], user: [], authorization: [] };
+    this.metadata = { raw_data: {keys: []}, project: {keys: []}, device: {keys: []} };
+    this.arrays = { raw_data: [], project: [], device: [], user: [], authorization: [] };
     this.project = {};
     this.device = {};
     this.raw_data = {};
@@ -55,11 +68,14 @@ export class ApiData {
 export class ApiDataSelections {
   project: {
     ids: string[];
+    keys: string[];
   };
   device: {
     ids: string[];
+    keys: string[];
   };
   raw_data: {
+    keys: string[];
     dates: {
       begin: Date;
       end: Date;
@@ -67,10 +83,10 @@ export class ApiDataSelections {
   };
 
   constructor() {
-    this.project = { ids: [] };
-    this.device = { ids: [] };
-    let now = new Date();
-    this.raw_data = { dates: { begin: moment(now.valueOf() - 60 * 60 * 4 * 1000).toDate(), end: new Date() } }
+    this.project = { ids: [], keys: [] };
+    this.device = { ids: [], keys: [] };
+    let now = moment();
+    this.raw_data = { keys: [], dates: { begin: (now.subtract({'days': 2})).toDate(), end: moment().toDate() } }
   }
 }
 
@@ -79,7 +95,6 @@ export class ApiDataSelections {
   providedIn: 'root'
 })
 export class DataService {
-  private initialized = false;
   private db: ApiData;
   private data_subject: BehaviorSubject<ApiData>;
   public data: Observable<ApiData>;
@@ -91,89 +106,93 @@ export class DataService {
     this.db = new ApiData();
     this.data_subject = new BehaviorSubject<ApiData>(this.db);
     this.data = this.data_subject.asObservable();
-    console.log('this.db', JSON.parse(JSON.stringify(this.db)));
 
     this.config = new ApiDataSelections();
     this.selection_subject = new BehaviorSubject<ApiDataSelections>(this.config);
     this.selection = this.selection_subject.asObservable();
-    console.log('this.config', JSON.parse(JSON.stringify(this.config)));
   }
 
   public init() {
-    if (!this.initialized) {
-      this.api.get('project').subscribe(
-        (api_response) => {
-          if (api_response['error']) {
-            console.error(api_response['error'])
-          } else {
-            this.db.project = {};
-            for (const project of api_response['data']) {
-              this.db.project[project['_id']] = new ApiObject(project);
-              this.db.arrays.project.push(new ApiObject(project));
-            }
-            this.data_subject.next(this.db);
-            console.log('this.db', JSON.parse(JSON.stringify(this.db)));
+    this.api.get('project').subscribe(
+      (api_response) => {
+        if (api_response['error']) {
+          console.error(api_response['error'])
+        } else {
+          let keys = {};
+          this.db.project = {};
+          for (const project of api_response['data']) {
+            Object.keys(project).forEach((key) => {keys[key] = true});
+            this.db.project[project['_id']] = new ApiObject(project);
+            this.db.arrays.project.push(new ApiObject(project));
           }
-        },
-        (err) => { console.error(err); },
-      );
+          this.db.metadata.project.keys = Object.keys(keys);
+          this.data_subject.next(this.db);
+        }
+      },
+      (err) => { console.error(err); },
+    );
 
-      this.api.get('device').subscribe(
-        (api_response) => {
-          if (api_response['error']) {
-            console.error(api_response['error'])
-          } else {
-            this.db.device = {};
-            for (const device of api_response['data']) {
-              this.db.device[device['_id']] = new ApiObject(device);
-              this.db.arrays.device.push(new ApiObject(device));
-            }
-            this.data_subject.next(this.db);
-            console.log('this.db', JSON.parse(JSON.stringify(this.db)));
+    this.api.get('device').subscribe(
+      (api_response) => {
+        if (api_response['error']) {
+          console.error(api_response['error'])
+        } else {
+          let keys = {};
+          this.db.device = {};
+          for (const device of api_response['data']) {
+            Object.keys(device).forEach((key) => {keys[key] = true});
+            this.db.device[device['_id']] = new ApiObject(device);
+            this.db.arrays.device.push(new ApiObject(device));
           }
-        },
-        (err) => { console.error(err); },
-      );
+          this.db.metadata.device.keys = Object.keys(keys);
+          this.data_subject.next(this.db);
+        }
+      },
+      (err) => { console.error(err); },
+    );
 
-      this.api.get('raw_data').subscribe(
-        (api_response) => {
-          if (api_response['error']) {
-            console.error(api_response['error'])
-          } else {
-            this.db.raw_data = {};
-            for (const raw_data of api_response['data']) {
-              if (!this.db.raw_data.hasOwnProperty(raw_data['device'])) {
-                this.db.raw_data[raw_data['device']] = [];
-              }
-              this.db.raw_data[raw_data['device']].push(new ApiObject(raw_data));
+    this.api.get('raw_data').subscribe(
+      (api_response) => {
+        if (api_response['error']) {
+          console.error(api_response['error'])
+        } else {
+          let keys = {};
+          this.db.raw_data = {};
+          for (const raw_data of api_response['data']) {
+            // Object.keys(raw_data).forEach((key) => {keys[key] = true});
+            Object.keys(raw_data['raw']).forEach((key) => {keys[key] = true});
+            if (!this.db.raw_data.hasOwnProperty(raw_data['device'])) {
+              this.db.raw_data[raw_data['device']] = [];
             }
-            this.data_subject.next(this.db);
-            console.log('this.db', JSON.parse(JSON.stringify(this.db)));
-            console.log('this.db, json', this.db);
+            this.db.raw_data[raw_data['device']].push(new ApiObject(raw_data));
+            this.db.arrays.raw_data.push(new ApiObject(raw_data));
           }
-        },
-        (err) => { console.error(err); },
-      );
+          this.db.metadata.raw_data.keys = Object.keys(keys);
+          this.data_subject.next(this.db);
+        }
+      },
+      (err) => { console.error(err); },
+    );
 
-      this.initialized = true;
-    }
   }
 
   public set_project(ids: string[]) {
     this.config.project.ids = ids;
     this.selection_subject.next(this.config);
-    console.log('this.config', JSON.parse(JSON.stringify(this.config)));
   }
 
   public set_device(ids: string[]) {
     this.config.device.ids = ids;
     this.selection_subject.next(this.config);
-    console.log('this.config', JSON.parse(JSON.stringify(this.config)));
   }
 
   public set_dates(begin: Date = new Date(), end: Date = new Date()) {
     this.config.raw_data.dates = { begin: begin, end: end };
     this.selection_subject.next(this.config);
-    console.log('this.config', JSON.parse(JSON.stringify(this.config)));
+  }
+
+  public set_raw_data_keys(keys: string[]) {
+    this.config.raw_data.keys = keys;
+    this.selection_subject.next(this.config);
   }
 };

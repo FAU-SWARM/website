@@ -11,4 +11,8 @@ export class AppComponent {
   constructor(private ds: DataService) {
     this.ds.init();
   }
+
+  refresh() {
+    this.ds.init();
+  }
 }

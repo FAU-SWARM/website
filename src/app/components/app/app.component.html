@@ -1,10 +1,10 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" [routerLink]="['/']" routerLinkActive="active">SWARM</a>
-    <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
-        <!-- <li class="nav-item text-nowrap">
+    <!-- <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search"> -->
+    <!-- <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
             <a class="nav-link" [routerLink]="['/']" routerLinkActive="active">Sign out</a>
-        </li> -->
+        </li>
         <li class="nav-item text-nowrap">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -48,7 +48,8 @@
                 <polyline points="2 12 12 17 22 12"></polyline>
             </svg>
         </li>
-    </ul>
+    </ul> -->
+    <p class="navbar-nav px-3 text-white" style="cursor: pointer;" (click)="refresh()"><i class="fa fa-refresh"></i></p>
 </nav>
 
 <div class="container-fluid">

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { saveAs } from 'file-saver';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-utility-table',
@@ -11,12 +13,9 @@ export class UtilityTableComponent implements OnInit {
   @Input() rows: any[];
   @Input() columns: any[];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.rows = [];
-    this.columns = [];
-  }
+  ngOnInit() {}
 
   download() {
     const replacer = (key, value) => value === null ? 'NULL' : value;
@@ -25,6 +24,6 @@ export class UtilityTableComponent implements OnInit {
     let csvArray = csv.join('\n');
 
     var blob = new Blob([csvArray], {type: 'text/csv' })
-    saveAs(blob, "myFile.csv");
+    saveAs(blob, `${this.route.snapshot.url.join('-')}-${moment().format('YYYY-MM-DD-hhmmss')}.csv`);
   }
 }

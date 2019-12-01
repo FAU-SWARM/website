@@ -1,13 +1,13 @@
 <!-- date selection -->
-<div class="form-inline">
+<form class="form-inline">
     <div class="form-group">
         <div class="input-group">
             <!-- project selection -->
-            <ng-select placeholder="Select projects:" [items]="project"
-                [multiple]="true" bindLabel="name" bindValue="_id" [closeOnSelect]="false"
-                [disabled]="project.length === 0" [(ngModel)]="selected_projects" (change)="change_selected_projects()">
+            <ng-select [ngModelOptions]="{standalone: true}" placeholder="Select projects:" [items]="project" [multiple]="true" bindLabel="name"
+                bindValue="_id" [closeOnSelect]="false" [disabled]="project.length === 0"
+                [(ngModel)]="selected_projects" (change)="change_selected_projects()">
                 <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{standalone: true}"/> {{item.name}}
                 </ng-template>
             </ng-select>
         </div>
@@ -15,21 +15,29 @@
     <div class="form-group ml-2">
         <div class="input-group">
             <!-- device selection -->
-            <ng-select placeholder="Select devices:" [items]="device"
-                [multiple]="true" bindLabel="name" bindValue="_id" groupBy="project" [selectableGroup]="true"
-                [closeOnSelect]="false" [disabled]="device.length === 0" [(ngModel)]="selected_devices"
-                (change)="change_selected_devices()">
+            <ng-select [ngModelOptions]="{standalone: true}" placeholder="Select devices:" [items]="device" [multiple]="true" bindLabel="name" bindValue="_id"
+                groupBy="project" [selectableGroup]="true" [closeOnSelect]="false" [disabled]="device.length === 0"
+                [(ngModel)]="selected_devices" (change)="change_selected_devices()">
                 <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
-                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.project}}
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{standalone: true}"/> {{item.project}}
                 </ng-template>
                 <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{standalone: true}"/> {{item.name}}
                 </ng-template>
             </ng-select>
         </div>
     </div>
-</div>
-<form class="form-inline">
+    <div class="form-group ml-2 mr-2">
+        <div class="input-group">
+            <!-- device selection -->
+            <ng-select [ngModelOptions]="{standalone: true}" placeholder="Select data keys:" [items]="raw_data_key" [multiple]="true" [closeOnSelect]="false" [disabled]="raw_data_key.length === 0"
+                [(ngModel)]="selected_raw_data_keys" (change)="change_selected_raw_data_keys()">
+                <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                    <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{standalone: true}"/> {{item}}
+                </ng-template>
+            </ng-select>
+        </div>
+    </div>
     <div class="form-group hidden">
         <!-- calendar big dialog -->
         <div class="input-group">

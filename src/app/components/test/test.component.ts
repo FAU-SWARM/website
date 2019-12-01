@@ -43,7 +43,6 @@ export class TestComponent implements OnInit {
 
     this.api.get('raw_data').subscribe(
       (raw_data) => {
-        console.log(raw_data);
 
         Object.keys(raw_data.data[0].raw).forEach(element => {
           this.keys.push(element);
@@ -71,9 +70,6 @@ export class TestComponent implements OnInit {
             }, 1000
           );
         }
-        console.log(this.keys);
-        console.log(this.functions);
-        console.log(this.data);
       },
       (err) => {
         console.error(err);

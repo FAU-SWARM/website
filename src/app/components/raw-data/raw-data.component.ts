@@ -141,7 +141,6 @@ export class RawDataComponent implements OnInit, OnChanges, AfterViewInit {
         for (const data of api_response['data']) {
           this.devices[data['_id']] = data;
         }
-        console.log('this.devices', this.devices);
       },
       (err) => {
         console.error(err);

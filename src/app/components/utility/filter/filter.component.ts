@@ -12,8 +12,12 @@ import { DataService, ApiData, ApiDataSelections } from 'src/app/services/data.s
 export class UtilityFilterComponent implements OnInit {
   db: ApiData;
   selections: ApiDataSelections;
-  device: any[]; project: any[];
-  selected_devices: any[]; selected_projects: any[];
+  device: any[];
+  project: any[];
+  raw_data_key: any[];
+  selected_devices: any[];
+  selected_projects: any[];
+  selected_raw_data_keys: any[];
 
   selected: { device: number[]; project: number[] };
 
@@ -31,16 +35,20 @@ export class UtilityFilterComponent implements OnInit {
   ngOnInit() {
     this.device = [];
     this.project = [];
+    this.raw_data_key = [];
     this.selected_devices = [];
     this.selected_projects = [];
+    this.selected_raw_data_keys = [];
     this.ds.data.subscribe(
       (db) => {
         this.db = db;
         this.selected = { project: [], device: [] };
         this.device = db.arrays.device.map((dev) => { dev['project'] = dev['meta_data']['project']; return dev });
         this.project = db.arrays.project.map((proj) => { return proj });
+        this.raw_data_key = db.metadata.raw_data.keys.map((key) => { return key });
         this.selected_devices = [];
         this.selected_projects = [];
+        this.selected_raw_data_keys = [];
       }
     );
     this.ds.selection.subscribe(
@@ -50,12 +58,12 @@ export class UtilityFilterComponent implements OnInit {
           this.fromDate = new NgbDate(
             selections.raw_data.dates.begin.getFullYear(),
             selections.raw_data.dates.begin.getMonth(),
-            selections.raw_data.dates.begin.getDay(),
+            selections.raw_data.dates.begin.getDate(),
           );
           this.toDate = new NgbDate(
             selections.raw_data.dates.end.getFullYear(),
             selections.raw_data.dates.end.getMonth(),
-            selections.raw_data.dates.end.getDay(),
+            selections.raw_data.dates.end.getDate(),
           );
           this.dateset = true;
         }
@@ -122,6 +130,10 @@ export class UtilityFilterComponent implements OnInit {
 
   change_selected_devices() {
     this.ds.set_device(this.get_actually_selected_devices(this.selected_devices));
+  }
+
+  change_selected_raw_data_keys() {
+    this.ds.set_raw_data_keys(this.selected_raw_data_keys);
   }
 
   get_actually_selected_devices(selected_devices: string[]): string[] {
