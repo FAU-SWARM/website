@@ -3,17 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import * as Component from 'src/app/components';
 
 const routes: Routes = [
-  // testing
-  {
-    component: Component.TestHomeComponent, path: 'test/home',
-    data: { breadcrumb: 'Home', description: 'Just mucking around!' },
-  },
-  {
-    component: Component.TestComponent, path: 'test/data',
-    data: { breadcrumb: 'Test', description: 'Just mucking around!' },
-  },
-
-  // real
   {
     component: Component.HomeComponent, path: '',
     data: { breadcrumb: 'Test', description: 'Just mucking around!' },
