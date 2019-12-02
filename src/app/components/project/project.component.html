@@ -14,10 +14,10 @@
                     <small class="text-muted">created: {{item.value.date_created | date : 'long'}}</small><br>
                     <small class="text-muted">modified: {{item.value.date_modified | date : 'long'}}</small>
                 </p>
-                <p class="card-text">{{item.value.description ? item.value.description : 'no description' }}</p>
                 <img src="{{item.value.img}}" alt="" class="img-fluid" *ngIf="item.value.img">
-                <a href="{{item.value.link}}" class="btn btn-primary" *ngIf="item.value.link">Go to
-                    {{item.value.name}}</a>
+                <br>
+                <p class="card-text">{{item.value.description ? item.value.description : 'no description' }}</p>
+                <a href="{{item.value.link}}" class="btn btn-primary" *ngIf="item.value.link">Go to the "{{item.value.name}}" Website</a>
             </div>
         </div>
     </div>
