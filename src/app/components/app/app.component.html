@@ -49,7 +49,10 @@
             </svg>
         </li>
     </ul> -->
-    <p class="navbar-nav px-3 text-white" style="cursor: pointer;" (click)="refresh()"><i class="fa fa-refresh"></i></p>
+    <!-- <p class="navbar-nav px-3 text-white" style="cursor: pointer;" (click)="refresh()"><i class="fa fa-refresh"></i></p> -->
+    <div class="navbar-nav px-3">
+        <div class="lds-dual-ring" *ngIf="this.ds.loading | async"></div>
+    </div>
 </nav>
 
 <div class="container-fluid">
@@ -83,6 +86,9 @@
                                 <a class="nav-link" [routerLink]="['/data/intelligent']" routerLinkActive="active">Intelligent</a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/settings']" routerLinkActive="active">Settings</a>
                     </li>
                 </ul>
             </div>

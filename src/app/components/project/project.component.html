@@ -6,7 +6,8 @@
 </div>
 <div class="row">
     <div class="col-sm-4 mb-4" *ngFor="let item of this.db.project | keyvalue">
-        <div class="card">
+        <div class="card" (click)="open(edit, item.value)" [ngClass]="card_class[item.value._id]" (mouseover)="card_class[item.value._id]='card shadow-lg'"
+            (mouseout)="card_class[item.value._id]='card'" style="cursor: pointer">
             <div class="card-body">
                 <h5 class="card-title">{{item.value.name}}</h5>
                 <p class="card-text">
@@ -14,9 +15,58 @@
                     <small class="text-muted">modified: {{item.value.date_modified | date : 'long'}}</small>
                 </p>
                 <p class="card-text">{{item.value.description ? item.value.description : 'no description' }}</p>
-                <img src="{{item.value.img}}" alt="" class="img-responsive">
-                <a href="{{item.value.link}}" class="btn btn-primary">Go to {{item.value.name}}</a>
+                <img src="{{item.value.img}}" alt="" class="img-responsive" *ngIf="item.value.img">
+                <a href="{{item.value.link}}" class="btn btn-primary" *ngIf="item.value.link">Go to
+                    {{item.value.name}}</a>
             </div>
         </div>
     </div>
 </div>
+
+<ng-template #edit let-modal>
+    <span *ngIf="project">
+        <div class="modal-header">
+            <h4 class="modal-title">Edit "Project: {{project.name}}"</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group row">
+                    <label for="name" class="col-2 col-form-label">Name</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="name" [(ngModel)]="project.name" name="name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" class="col-2 col-form-label">Description</label>
+                    <div class="col-10">
+                        <textarea rows="4" cols="50" class="form-control" id="description"
+                            [(ngModel)]="project.description" name="description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="img" class="col-2 col-form-label">Image Link</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="img" [(ngModel)]="project.img" name="img">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="link" class="col-2 col-form-label">Web Link</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="link" [(ngModel)]="project.link" name="link">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col text-right">
+                        <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+    </span>
+</ng-template>

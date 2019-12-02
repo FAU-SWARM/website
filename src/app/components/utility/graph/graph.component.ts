@@ -191,9 +191,9 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
       }
     }
 
-    for (const name in this.functions) {
-      if (this.functions.hasOwnProperty(name) && !(name.toLowerCase() === 'date')) {
-        const functions = this.functions[name];
+    for (const func in this.functions) {
+      if (this.columns.find((col) => {return col === func}) && this.functions.hasOwnProperty(func) && !(func.toLowerCase() === 'date')) {
+        const functions = this.functions[func];
         for (const device_id in this.data) {
           if (this.data.hasOwnProperty(device_id)) {
             const data = this.data[device_id];
@@ -327,7 +327,7 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
                 _this.chart.tooltip.transition()
                   .duration(250)
                   .style('opacity', 0.9);
-                _this.chart.tooltip.html(`date: ${functions.x(d)}<br>type: ${func}<br>value: ${functions.y(d)}<br>device: ${this.db.device[device_id]['name']}`)
+                _this.chart.tooltip.html(`date: ${functions.x(d)}<br>type: ${func}<br>value: ${functions.y(d)}<br>device: ${_this.db.device[device_id]['name']}`)
                   .style('left', (d3.event.pageX / 2) + 'px')
                   .style('top', (d3.event.pageY / 2) + 'px');
               })
@@ -339,7 +339,11 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
                 }
               });
 
-            this.colors.push({ key: `${this.db.device[device_id]['name']} ${func}`, color: stroke });
+            try {
+              this.colors.push({ key: `${this.db.device[device_id]['name']} ${func}`, color: stroke });
+            } catch (error) {
+              console.error(device_id, error)
+            }
           }
         }
       }

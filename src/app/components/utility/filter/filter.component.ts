@@ -46,9 +46,6 @@ export class UtilityFilterComponent implements OnInit {
         this.device = db.arrays.device.map((dev) => { dev['project'] = dev['meta_data']['project']; return dev });
         this.project = db.arrays.project.map((proj) => { return proj });
         this.raw_data_key = db.metadata.raw_data.keys.map((key) => { return key });
-        this.selected_devices = [];
-        this.selected_projects = [];
-        this.selected_raw_data_keys = [];
       }
     );
     this.ds.selection.subscribe(
@@ -56,14 +53,14 @@ export class UtilityFilterComponent implements OnInit {
         this.selections = selections;
         if (!this.dateset) {
           this.fromDate = new NgbDate(
-            selections.raw_data.dates.begin.getFullYear(),
-            selections.raw_data.dates.begin.getMonth(),
-            selections.raw_data.dates.begin.getDate(),
+            selections.raw_data.dates.begin.getUTCFullYear(),
+            selections.raw_data.dates.begin.getUTCMonth() + 1,
+            selections.raw_data.dates.begin.getUTCDate(),
           );
           this.toDate = new NgbDate(
-            selections.raw_data.dates.end.getFullYear(),
-            selections.raw_data.dates.end.getMonth(),
-            selections.raw_data.dates.end.getDate(),
+            selections.raw_data.dates.end.getUTCFullYear(),
+            selections.raw_data.dates.end.getUTCMonth() + 1,
+            selections.raw_data.dates.end.getUTCDate(),
           );
           this.dateset = true;
         }

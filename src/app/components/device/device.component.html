@@ -6,7 +6,8 @@
 </div>
 <div class="row">
     <div class="col-sm-4 mb-4" *ngFor="let item of this.db.device | keyvalue">
-        <div class="card">
+        <div class="card" (click)="open(edit, item.value)" [ngClass]="card_class[item.value._id]" (mouseover)="card_class[item.value._id]='card shadow-lg'"
+            (mouseout)="card_class[item.value._id]='card'" style="cursor: pointer">
             <div class="card-body">
                 <h5 class="card-title">{{item.value.name}}</h5>
                 <p class="card-text">
@@ -18,3 +19,40 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #edit let-modal>
+    <span *ngIf="device">
+        <div class="modal-header">
+            <h4 class="modal-title">Edit "Device: {{device.name}}"</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group row">
+                    <label for="name" class="col-2 col-form-label">Name</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="name" [(ngModel)]="device.name" name="name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="meta_data" class="col-2 col-form-label">Meta Data</label>
+                    <div class="col-10">
+                        <json-editor #editor [options]="editor_options" [data]="device.meta_data" (change)="on_change($event)"></json-editor>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col text-right">
+                        <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+        </div>
+    </span>
+</ng-template>

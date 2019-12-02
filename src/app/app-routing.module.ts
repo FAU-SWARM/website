@@ -20,6 +20,10 @@ const routes: Routes = [
     data: { breadcrumb: 'Data', description: 'Browse options for viewing data.' },
   },
   {
+    component: Component.SettingsComponent, path: 'settings',
+    data: { breadcrumb: 'Settings', description: 'Change settings like refresh rate.' },
+  },
+  {
     component: Component.RawComponent, path: 'data/raw',
     data: { breadcrumb: 'Raw', description: 'Raw options for viewing data.' },
   },
