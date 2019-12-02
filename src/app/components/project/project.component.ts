@@ -30,7 +30,6 @@ export class ProjectComponent implements OnInit {
   submit() {
     this.ds.api.put('project', this.project['_id'], this.project).subscribe(
       (response) => {
-        console.log(response);
         this.ds.init();
       }
     )

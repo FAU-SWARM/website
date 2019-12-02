@@ -96,7 +96,7 @@ export class Settings {
   refresh_rate: number;
 
   constructor() {
-    this.refresh_rate = 5;
+    this.refresh_rate = 30;
   }
 }
 

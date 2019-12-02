@@ -36,19 +36,15 @@ export class DeviceComponent implements OnInit {
   }
 
   submit() {
-    console.log(JSON.parse(JSON.stringify(this.device)))
     this.device['meta_data'] = this.device_metadata;
-    console.log(JSON.parse(JSON.stringify(this.device)))
     this.ds.api.put('device', this.device['_id'], this.device).subscribe(
       (response) => {
-        console.log(response);
         this.ds.init();
       }
     )
   }
 
   on_change($event) {
-    console.log($event);
     this.device_metadata = $event;
   }
 }

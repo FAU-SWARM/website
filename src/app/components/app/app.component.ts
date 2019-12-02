@@ -26,7 +26,6 @@ export class AppComponent {
             this.refresh();
           }, settings.refresh_rate * 1000
         );
-        console.log(this.interval_id);
       }
     )
   }
