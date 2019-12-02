@@ -6,18 +6,21 @@
 </div>
 <div class="row">
     <div class="col-sm-4 mb-4" *ngFor="let item of this.db.project | keyvalue">
-        <div class="card" (click)="open(edit, item.value)" [ngClass]="card_class[item.value._id]" (mouseover)="card_class[item.value._id]='card shadow-lg'"
-            (mouseout)="card_class[item.value._id]='card'" style="cursor: pointer">
+        <div class="card" (click)="open(edit, item.value)" [ngClass]="card_class[item.value._id]"
+            (mouseover)="card_class[item.value._id]='card shadow-lg'" (mouseout)="card_class[item.value._id]='card'"
+            style="cursor: pointer">
             <div class="card-body">
                 <h5 class="card-title">{{item.value.name}}</h5>
                 <p class="card-text">
                     <small class="text-muted">created: {{item.value.date_created | date : 'long'}}</small><br>
                     <small class="text-muted">modified: {{item.value.date_modified | date : 'long'}}</small>
                 </p>
-                <img src="{{item.value.img}}" alt="" class="img-fluid" *ngIf="item.value.img">
-                <br>
+                <p class="card-text">
+                    <img src="{{item.value.img}}" alt="" class="img-fluid" *ngIf="item.value.img">
+                </p>
                 <p class="card-text">{{item.value.description ? item.value.description : 'no description' }}</p>
-                <a href="{{item.value.link}}" class="btn btn-primary" *ngIf="item.value.link">Go to the "{{item.value.name}}" Website</a>
+                <a href="{{item.value.link}}" class="btn btn-primary" *ngIf="item.value.link">Go to the
+                    "{{item.value.name}}" Website</a>
             </div>
         </div>
     </div>
