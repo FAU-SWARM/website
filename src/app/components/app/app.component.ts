@@ -13,7 +13,7 @@ export class AppComponent {
   settings: Settings;
   interval_id: any;
 
-  constructor(private ds: DataService) {
+  constructor(public ds: DataService) {
     this.ds.init();
     this.ds.settings.subscribe(
       (settings) => {
