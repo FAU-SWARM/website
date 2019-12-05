@@ -277,6 +277,8 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
 
     let color_i = 0;
     this.colors = [];
+    console.log(this.selections)
+    console.log(this.selections.device.ids.length)
     if (this.selections.device.ids.length > 0) {
       for (const device_id in this.data) {
         if (this.db.device.hasOwnProperty(device_id) && this.data.hasOwnProperty(device_id)) {
