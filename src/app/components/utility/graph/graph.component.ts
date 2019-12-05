@@ -192,7 +192,7 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
     }
 
     for (const func in this.functions) {
-      if (this.columns.find((col) => {return col === func}) && this.functions.hasOwnProperty(func) && !(func.toLowerCase() === 'date')) {
+      if (this.columns.find((col) => { return col === func }) && this.functions.hasOwnProperty(func) && !(func.toLowerCase() === 'date')) {
         const functions = this.functions[func];
         for (const device_id in this.data) {
           if (this.data.hasOwnProperty(device_id)) {
@@ -277,73 +277,74 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
 
     let color_i = 0;
     this.colors = [];
-    console.log(this.data)
-    for (const device_id in this.data) {
-      if (this.data.hasOwnProperty(device_id)) {
-        const data = this.data[device_id];
+    if (this.selections.device.ids.length > 0) {
+      for (const device_id in this.data) {
+        if (this.db.device.hasOwnProperty(device_id) && this.data.hasOwnProperty(device_id)) {
+          const data = this.data[device_id];
 
-        for (const func in this.functions) {
-          if (
-            this.columns.find((col) => {return col === func}) &&
-            this.functions.hasOwnProperty(func) &&
-            !(func.toLowerCase() === 'date')) {
-            const functions = this.functions[func];
+          for (const func in this.functions) {
+            if (
+              this.columns.find((col) => { return col === func }) &&
+              this.functions.hasOwnProperty(func) &&
+              !(func.toLowerCase() === 'date')) {
+              const functions = this.functions[func];
 
-            let dataline = d3.line()
-              // d3 namespace
-              .x((d) => { return _this.chart.x_scale(functions.x(d)); })
-              .y((d) => { return _this.chart.y_scale(functions.y(d)); });
+              let dataline = d3.line()
+                // d3 namespace
+                .x((d) => { return _this.chart.x_scale(functions.x(d)); })
+                .y((d) => { return _this.chart.y_scale(functions.y(d)); });
 
-            // data line generation
-            this.chart.lines[func] = dataline;
-            let stroke = COLOR_MAP[COLORS[this.random_sequence[color_i]]];
-            color_i += 1;
-            if (color_i == this.random_sequence.length)
-              color_i = 0;
-            this.g.append('path')
-              // d3 namespace
-              .data([data])
-              .attr('class', `line`)
-              // https://stackoverflow.com/questions/14765036/d3-line-chart-filling-at-arbitrary-line
-              .style('fill', 'none')
-              .style('stroke', stroke)
-              .style('stroke-width', '2px')
-              .attr('d', dataline);
+              // data line generation
+              this.chart.lines[func] = dataline;
+              let stroke = COLOR_MAP[COLORS[this.random_sequence[color_i]]];
+              color_i += 1;
+              if (color_i == this.random_sequence.length)
+                color_i = 0;
+              this.g.append('path')
+                // d3 namespace
+                .data([data])
+                .attr('class', `line`)
+                // https://stackoverflow.com/questions/14765036/d3-line-chart-filling-at-arbitrary-line
+                .style('fill', 'none')
+                .style('stroke', stroke)
+                .style('stroke-width', '2px')
+                .attr('d', dataline);
 
-            this.g.selectAll('.dot')
-              .data(data)
-              .enter()
-              .append('circle')
-              .attr('r', 5)
-              .attr('cx', (d) => { return _this.chart.x_scale(functions.x(d)); })
-              .attr('cy', (d) => { return _this.chart.y_scale(functions.y(d)); })
-              .attr('stroke', 'black')
-              .attr('stroke-width', 1.5)
-              .style('fill', 'white')
-              .style('cursor', 'pointer')
-              .on('click', (d) => {
-                _this.tooltip_sustain = !_this.tooltip_sustain;
-              })
-              .on('mouseover', (d) => {
-                _this.chart.tooltip.transition()
-                  .duration(250)
-                  .style('opacity', 0.9);
-                _this.chart.tooltip.html(`date: ${functions.x(d)}<br>type: ${func}<br>value: ${functions.y(d)}<br>device: ${_this.db.device[device_id]['name']}`)
-                  .style('left', (d3.event.pageX / 2) + 'px')
-                  .style('top', (d3.event.pageY / 2) + 'px');
-              })
-              .on('mouseout', (d) => {
-                if (!_this.tooltip_sustain) {
+              this.g.selectAll('.dot')
+                .data(data)
+                .enter()
+                .append('circle')
+                .attr('r', 5)
+                .attr('cx', (d) => { return _this.chart.x_scale(functions.x(d)); })
+                .attr('cy', (d) => { return _this.chart.y_scale(functions.y(d)); })
+                .attr('stroke', 'black')
+                .attr('stroke-width', 1.5)
+                .style('fill', 'white')
+                .style('cursor', 'pointer')
+                .on('click', (d) => {
+                  _this.tooltip_sustain = !_this.tooltip_sustain;
+                })
+                .on('mouseover', (d) => {
                   _this.chart.tooltip.transition()
-                    .duration(500)
-                    .style('opacity', 0);
-                }
-              });
+                    .duration(250)
+                    .style('opacity', 0.9);
+                  _this.chart.tooltip.html(`date: ${functions.x(d)}<br>type: ${func}<br>value: ${functions.y(d)}<br>device: ${_this.db.device[device_id]['name']}`)
+                    .style('left', (d3.event.pageX / 2) + 'px')
+                    .style('top', (d3.event.pageY / 2) + 'px');
+                })
+                .on('mouseout', (d) => {
+                  if (!_this.tooltip_sustain) {
+                    _this.chart.tooltip.transition()
+                      .duration(500)
+                      .style('opacity', 0);
+                  }
+                });
 
-            try {
               this.colors.push({ key: `${this.db.device[device_id]['name']} ${func}`, color: stroke });
-            } catch (error) {
-              console.error(device_id, error)
+              // try {
+              // } catch (error) {
+              //   console.error(device_id, error)
+              // }
             }
           }
         }
