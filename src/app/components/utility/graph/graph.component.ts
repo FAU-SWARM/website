@@ -277,21 +277,20 @@ export class UtilityGraphComponent implements OnInit, OnChanges, AfterViewInit {
 
     let color_i = 0;
     this.colors = [];
-    console.log(this.selections)
-    console.log(this.selections.device.ids.length)
-    if (this.selections.device.ids.length > 0) {
+    if (this.selections.device.ids.length > 0 && this.selections.raw_data.keys.length > 0) {
       for (const device_id in this.data) {
         if (this.db.device.hasOwnProperty(device_id) && this.data.hasOwnProperty(device_id)) {
           const data = this.data[device_id];
 
           for (const func in this.functions) {
             if (
+              data.length > 0 && data[0]['raw'].hasOwnProperty(func) &&  // temporary hack, too sleepy for better
               this.columns.find((col) => { return col === func }) &&
               this.functions.hasOwnProperty(func) &&
               !(func.toLowerCase() === 'date')) {
               const functions = this.functions[func];
 
-              let dataline = d3.line()
+              var dataline = d3.line()
                 // d3 namespace
                 .x((d) => { return _this.chart.x_scale(functions.x(d)); })
                 .y((d) => { return _this.chart.y_scale(functions.y(d)); });
